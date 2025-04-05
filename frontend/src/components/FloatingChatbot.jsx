@@ -95,7 +95,13 @@ export default function FloatingChatbot({ apiKey }) {
     setIsLoading(true);
     
     // Store input value and clear input field
-    const currentInput = inputText + " in atmost 100 words";
+    let currentInput = inputText;
+    let wordCount = currentInput.split(/\s+/).length; // Split by whitespace to count words
+
+    if (wordCount > 3) {
+      currentInput += " in atmost 100 words";
+    }
+
     setInputText('');
     
     try {
