@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 
-const ChatRoom = ({ userId, roomId }) => {
+const ChatRoom = ({ name,userId, roomId }) => {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState('');
   const ws = useRef(null);
@@ -50,7 +50,7 @@ const ChatRoom = ({ userId, roomId }) => {
 
   return (
     <div className="p-4 max-w-md mx-auto">
-      <h1 className="text-2xl font-bold mb-4">Chat Room: {roomId}</h1>
+      <h1 className="text-2xl font-bold mb-4">Chat Room: {name}</h1>
 
       <div className="border rounded p-4 h-64 overflow-y-auto mb-4">
         {messages.map((msg, idx) => (
