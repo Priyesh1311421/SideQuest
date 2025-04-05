@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 
 const TextChatPage = () => {
   const [rooms, setRooms] = useState([]);
+  const [language, setLanguage] = useState("english");
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
 
@@ -27,6 +28,13 @@ const TextChatPage = () => {
   };
 
   useEffect(() => {
+    const savedLang = localStorage.getItem("language");
+    if (savedLang) {
+      setLanguage(savedLang);
+    } else {
+      localStorage.setItem("language", "english");
+    }
+
     const fetchRooms = async () => {
       try {
         const response = await axios.get("http://localhost:5000/api/rooms", {
@@ -39,6 +47,7 @@ const TextChatPage = () => {
         console.error("Error fetching rooms:", error);
       }
     };
+
     fetchRooms();
   }, [token]);
 
@@ -48,11 +57,34 @@ const TextChatPage = () => {
     });
   };
 
+  const handleLanguageChange = (e) => {
+    const selectedLang = e.target.value;
+    setLanguage(selectedLang);
+    localStorage.setItem("language", selectedLang);
+  };
+
   return (
     <Layout>
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-8 text-center">Join a Chat Room</h1>
-        
+        <div className="flex justify-between items-center mb-6 flex-col gap-5">
+          <h1 className="text-3xl font-bold">Join a Chat Room</h1>
+
+          <div className="flex flex-row gap-5 items-center ">
+            <h1 className="font-bold">Select a language:</h1>
+            <select
+              value={language}
+              onChange={handleLanguageChange}
+              className="border rounded px-3 py-1 text-gray-700"
+            >
+              <option value="english">English</option>
+              <option value="hindi">Hindi</option>
+              <option value="japanese">Japanese</option>
+              <option value="italian">Italian</option>
+              <option value="italian">Portuguese</option>
+            </select>
+          </div>
+        </div>
+
         <div className="mb-12">
           <Carousel className="w-full max-w-5xl mx-auto">
             <CarouselContent>
