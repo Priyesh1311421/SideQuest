@@ -3,6 +3,15 @@ import Layout from "../components/Layout";
 import { TypewriterEffectSmooth } from "../components/Typewritter-effect";
 import FeatureCards from "../components/FeatureCards";
 import { useEffect, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "../components/Accordian";
+
+import LoginModal from "../components/LoginModal";
+import SignupModal from "../components/SignupModal";
 
 const LandingPage = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -38,6 +47,35 @@ const LandingPage = () => {
   const closeSignupModal = () => {
     setIsSignupModalOpen(false);
   };
+
+  const faqs = [
+    {
+      question: "Is this platform free to use?",
+      answer:
+        "Yes! All our cultural stories and chat features are completely free to explore and enjoy.",
+    },
+    {
+      question: "Do I need to know a foreign language to chat?",
+      answer:
+        "Not at all. Our voice and text chats include live translation, so you can communicate naturally across languages.",
+    },
+    {
+      question: "How do the cultural stories work?",
+      answer:
+        "Each story takes you through a country's culture using visuals, sound, and animation — almost like a living slideshow or short immersive film.",
+    },
+    {
+      question: "Can I use this on my phone?",
+      answer:
+        "Absolutely! The platform is responsive and works well on most modern smartphones and tablets.",
+    },
+    {
+      question: "Which countries are supported in chat?",
+      answer:
+        "Right now, our text chat has rooms for 2–3 featured countries and global events. More will be added as the community grows!",
+    },
+  ];
+  
 
   return (
     <Layout>
@@ -116,6 +154,26 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+
+        {/* FAQ Section with Accordion */}
+        <div id="faq" className="py-24 bg-gray-50 w-full">
+          <div className="max-w-4xl mx-auto px-6">
+            <h2 className="text-4xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger className="text-lg font-medium text-left py-4 px-2">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-700 pt-2 pb-4 px-2">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
       </div>
 
       {/* Import and use the same modals from Header component */}
@@ -137,9 +195,5 @@ const LandingPage = () => {
     </Layout>
   );
 };
-
-// Make sure to include these imports at the top of your file
-import LoginModal from "../components/LoginModal";
-import SignupModal from "../components/SignupModal";
 
 export default LandingPage;
