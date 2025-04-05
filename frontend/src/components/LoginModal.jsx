@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState(""); // Changed from 'username' to 'email'
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -11,11 +11,13 @@ const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
     setError("");
     
     try {
-      const response = await axios.post("/api/login", {
-        username,
+      const response = await axios.post("http://localhost:5000/api/login", {
+        email, // Sending 'email' instead of 'username'
         password,
       });
-      console.log("Login successful:", response.data);
+      localStorage.setItem("userId", response.data.result._id);
+      localStorage.setItem("token", response.data.token);
+      console.log("Login successful:");
       onClose(); 
     } catch (err) {
       setError("Invalid credentials. Please try again.");
@@ -43,10 +45,10 @@ const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
         <h2 className="text-xl font-semibold mb-4 text-center">Login</h2>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            type="email" // Changed to 'email' type
+            placeholder="Email" // Updated placeholder to 'Email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />

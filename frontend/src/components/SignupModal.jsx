@@ -2,29 +2,28 @@ import React, { useState } from "react";
 import axios from "axios";
 
 const SignupModal = ({ isOpen, onClose, openLoginModal }) => {
-  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     
-    // Basic validation
-    if (password !== confirmPassword) {
-      setError("Passwords do not match");
+    // Basic validation (password field should not be empty)
+    if (!password) {
+      setError("Password is required.");
       return;
     }
-    
+
     try {
-      const response = await axios.post("/api/signup", {
-        username,
+      const response = await axios.post("http://localhost:5000/api/signup", {
         email,
         password,
       });
-      console.log("Signup successful:", response.data);
+      localStorage.setItem("userId", response.data.result._id);
+      localStorage.setItem("token", response.data.token);
+      console.log("Signup successful:");
       onClose(); // Close modal on success
       // You can redirect to login or directly log the user in
     } catch (err) {
@@ -53,14 +52,6 @@ const SignupModal = ({ isOpen, onClose, openLoginModal }) => {
         <h2 className="text-xl font-semibold mb-4 text-center">Sign Up</h2>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <input
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-          <input
             type="email"
             placeholder="Email"
             value={email}
@@ -73,14 +64,6 @@ const SignupModal = ({ isOpen, onClose, openLoginModal }) => {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Confirm Password"
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
             className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
