@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [isStoriesOpen, setIsStoriesOpen] = useState(false);
 
     return (
         <nav className="bg-stone-100 fixed w-full z-20 top-0 start-0 border-b border-gray-300 dark:border-gray-600">
@@ -38,15 +39,46 @@ const Header = () => {
                                 <a href="#" className="block py-2 px-3 text-zinc-700 hover:text-blue-500">Home</a>
                             </li>
                             <li>
-                                <a href="#faqs" className="block py-2 px-3 text-zinc-700 hover:text-blue-500">FAQS</a>
+                                <Link to="/voice-chat" className="block py-2 px-3 text-zinc-700 hover:text-blue-500">Voice Chat</Link>
                             </li>
                             <li>
-                                <Link to="/timer" className="block py-2 px-3 text-zinc-700 hover:text-blue-500">Timer</Link>
+                                <Link to="/text-chat" className="block py-2 px-3 text-zinc-700 hover:text-blue-500">Text Chat</Link>
                             </li>
-                            <li>
-                                <button onClick={() => window.open("https://chromewebstore.google.com/", "_blank")} className="block w-full text-left py-2 px-3 text-zinc-700 hover:text-blue-500">
-                                    Chrome Extension
+                            <li className="relative">
+                                <button 
+                                    onClick={() => setIsStoriesOpen(!isStoriesOpen)}
+                                    className="flex items-center justify-between w-full py-2 px-3 text-zinc-700 hover:text-blue-500 focus:outline-none"
+                                >
+                                    Cultural Stories
+                                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                                    </svg>
                                 </button>
+                                <ul className={`${isStoriesOpen ? "block" : "hidden"} pl-4 mt-1 space-y-1`}>
+                                    <li>
+                                        <Link to="/stories/brazil" className="block py-1 px-3 text-sm text-zinc-700 hover:text-blue-500">
+                                            Brazil
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/stories/india" className="block py-1 px-3 text-sm text-zinc-700 hover:text-blue-500">
+                                            India
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/stories/italy" className="block py-1 px-3 text-sm text-zinc-700 hover:text-blue-500">
+                                            Italy
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link to="/stories/japan" className="block py-1 px-3 text-sm text-zinc-700 hover:text-blue-500">
+                                            Japan
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#about" className="block py-2 px-3 text-zinc-700 hover:text-blue-500">About</a>
                             </li>
                         </ul>
                     </div>
@@ -59,10 +91,10 @@ const Header = () => {
                             <a href="#" className="block py-2 px-3 text-zinc-700 hover:text-blue-500">Home</a>
                         </li>
                         <li>
-                            <a href="#faqs" className="block py-2 px-3 text-zinc-700 hover:text-blue-500">Voice Chat</a>
+                            <Link to="/voice-chat" className="block py-2 px-3 text-zinc-700 hover:text-blue-500">Voice Chat</Link>
                         </li>
                         <li>
-                            <Link to="/timer" className="block py-2 px-3 text-zinc-700 hover:text-blue-500">Text Chat</Link>
+                            <Link to="/text-chat" className="block py-2 px-3 text-zinc-700 hover:text-blue-500">Text Chat</Link>
                         </li>
 
                         {/* Dropdown starts here */}
@@ -72,18 +104,23 @@ const Header = () => {
                             </button>
                             <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-200 z-10">
                                 <li>
-                                    <Link to="/stories/folktales" className="block px-4 py-2 text-sm text-zinc-700 hover:bg-blue-100">
-                                        Folktales
+                                    <Link to="/stories/brazil" className="block px-4 py-2 text-sm text-zinc-700 hover:bg-blue-100">
+                                        Brazil
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/stories/myths" className="block px-4 py-2 text-sm text-zinc-700 hover:bg-blue-100">
-                                        Myths
+                                    <Link to="/stories/india" className="block px-4 py-2 text-sm text-zinc-700 hover:bg-blue-100">
+                                        India
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to="/stories/legends" className="block px-4 py-2 text-sm text-zinc-700 hover:bg-blue-100">
-                                        Legends
+                                    <Link to="/stories/italy" className="block px-4 py-2 text-sm text-zinc-700 hover:bg-blue-100">
+                                        Italy
+                                    </Link>
+                                </li>
+                                <li>
+                                    <Link to="/stories/japan" className="block px-4 py-2 text-sm text-zinc-700 hover:bg-blue-100">
+                                        Japan
                                     </Link>
                                 </li>
                             </ul>
