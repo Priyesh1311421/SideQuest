@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User'); // adjust this path if needed
 const Room = require('../models/Room');
 const authController = require('../controllers/authController');
+const Message = require('../models/Message');
 const JWT_SECRET = 'shivesh'; // adjust this path if needed
 const router = express.Router();
 
@@ -49,6 +50,22 @@ router.get('/rooms', authController, async (req, res) => {
     } catch (error) {
       res.status(500).json({ message: 'Server error' });
     }
+});
+
+router.get('/message/:roomId', authController, async (req, res) => {
+  try {
+    const { roomId } = req.params;
+    const limit = parseInt(req.query.limit) || 100;
+
+    const messages = await Message.find({ room: roomId })
+      .sort({ createdAt: -1 }) // Most recent first
+      .limit(limit);
+
+    res.status(200).json(messages.reverse()); // Reverse to send oldest first
+  } catch (error) {
+    console.error("Error fetching messages:", error);
+    res.status(500).json({ error: "Server error" });
+  }
 });
 
 module.exports = router;
