@@ -11,20 +11,22 @@ import SignupModal from "./components/SignupModal";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 import {
-  brazilStoryData,
-  indiaStoryData,
-  italyStoryData,
-  japanStoryData,
+    brazilStoryData,
+    indiaStoryData,
+    italyStoryData,
+    japanStoryData,
 } from "./data/storyData";
 
 function App() {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
     const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+    const [authChecked, setAuthChecked] = useState(false);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
         setIsAuthenticated(!!token);
+        setAuthChecked(true); // authentication check is done
     }, []);
 
     const openLoginModal = () => setIsLoginModalOpen(true);
@@ -40,7 +42,7 @@ function App() {
         <>
             <Routes>
                 <Route path="/" element={<LandingPage />} />
-                
+
                 <Route
                     path="/voice-chat"
                     element={
