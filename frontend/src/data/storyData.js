@@ -407,7 +407,7 @@ export const japanStoryData = {
         },
         {
             name: "Okonomiyaki",
-            image: "/images/japan/okonomiyaki.jpg",
+            image: "/images/japan/okonomiyaki.jpeg",
             description: "A savory pancake with meats, vegetables, and sauces.",
             videoLink: "https://www.youtube.com/watch?v=okonomiyaki-video",
         },
