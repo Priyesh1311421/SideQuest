@@ -3,9 +3,12 @@ import { Link } from "react-router-dom";
 
 import LoginModal from "./LoginModal";
 import SignupModal from "./SignupModal";
+import FloatingChatbot from "./FloatingChatbot";
 
 const Header = (props) => {
     const { currentPath } = props;
+
+    const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
 
     const isActive = (path) => {
         if (path === "/") {
@@ -404,6 +407,7 @@ const Header = (props) => {
                 onClose={closeSignupModal}
                 openLoginModal={openLoginModal}
             />
+            <FloatingChatbot apiKey={apiKey}/>
         </>
     );
 };

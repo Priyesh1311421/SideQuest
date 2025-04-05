@@ -6,7 +6,6 @@ const Footer = () => {
             <div className="max-w-6xl mx-auto flex flex-col items-center">
                 {/* Navigation links */}
                 <nav className="grid grid-flow-col gap-6 mb-6">
-                    <Link to="#faq" className="hover:text-blue-500 transition-colors">FAQs</Link>
                     <a href="https://github.com/Priyesh1311421/SideQuest"
                         className="hover:text-blue-500 transition-colors"
                         target="_blank"
