@@ -1,153 +1,458 @@
-// Example story data structure for Brazil - you would create similar objects for other countries
+
 export const brazilStoryData = {
-    id: "brazil-story",
-    title: "The Amazon's Guardian",
-    subtitle: "A tale of the rainforest and its protectors",
     country: "Brazil",
-    countryFlag: "/images/flags/brazil.png", // Path to your flag image
-    pages: [
+    headerImage: "/images/brazil-header.jpg",
+    greeting: {
+        text: "Olá",
+        description: "This is how we greet in Brazil",
+        audio: "audio/portuguese-greeting.mp3",
+    },
+    clothing: {
+        carouselImages: [
+            "/images/baiana-dress.jpg",
+            "/images/carnival-costume.jpg",
+            "/images/indigenous-brazil.jpg",
+        ],
+    },
+    languages: [
         {
-            title: "The Beginning",
-            image: "/images/stories/brazil/amazon-river.jpg", // Path to your image
-            imageAlt: "The Amazon River winding through the rainforest",
-            content: [
-                "Deep in the heart of the Amazon rainforest, where the trees reached toward the heavens and the river snaked through the dense vegetation like a blue serpent, lived a young girl named Isabella.",
-                "Isabella's grandfather was a respected shaman in their village, and he had taught her about the spirits of the forest since she was old enough to walk beneath the canopy of leaves.",
-                'One day, Isabella\'s grandfather took her deeper into the forest than she had ever been before. "The forest is speaking to us," he said, his voice barely above a whisper. "It needs our help."',
+            name: "Portuguese",
+            calligraphyImage: "/images/portuguese-calligraphy.jpg",
+            phrases: [
+                {
+                    text: "Obrigado (Thank you)",
+                    audio: "audio/obrigado.mp3",
+                },
+                {
+                    text: "Bom dia (Good morning)",
+                    audio: "audio/bom-dia.mp3",
+                },
             ],
         },
         {
-            title: "The Discovery",
-            image: "/images/stories/brazil/forest-clearing.jpg",
-            imageAlt:
-                "A clearing in the forest with sunlight streaming through",
-            content: [
-                "As they walked, Isabella noticed the sounds of the forest changing. The usual chorus of birds and monkeys had quieted, and in their place was the distant rumble of machines.",
-                '"What is that sound, grandfather?" Isabella asked, her heart beating faster with concern.',
-                '"It is the sound of danger," he replied solemnly. "Those who do not understand the forest are coming to take its treasures."',
-                "They reached a clearing where they could see smoke rising in the distance. Isabella's grandfather explained that outsiders were cutting down trees to sell the wood and clear land for farming.",
+            name: "Tupi",
+            calligraphyImage: "/images/tupi-script.jpg",
+            phrases: [
+                {
+                    text: "Abá (Man)",
+                    audio: "audio/aba.mp3",
+                },
+                {
+                    text: "Oré (We - inclusive)",
+                    audio: "audio/ore.mp3",
+                },
             ],
         },
-        // Additional pages would continue here
     ],
-    culturalFacts: [
-        "The Amazon Rainforest is home to about 10% of all known species on Earth.",
-        "Indigenous peoples have lived in the Amazon for thousands of years, developing deep knowledge of the medicinal properties of plants.",
-        "Brazil's official language is Portuguese, making it unique in South America where most countries speak Spanish.",
-        "The Brazilian concept of 'saudade' expresses a deep emotional state of melancholic longing for something or someone that is absent.",
-        "The Amazon River is the largest river by discharge volume of water in the world.",
+    food: [
+        {
+            name: "Feijoada",
+            image: "/images/feijoada.jpg",
+            description: "A hearty stew of black beans with pork and beef.",
+            videoLink: "https://www.youtube.com/watch?v=feijoada-video",
+        },
+        {
+            name: "Pão de Queijo",
+            image: "/images/pao-de-queijo.jpg",
+            description:
+                "Chewy cheese bread rolls, popular for breakfast or snacks.",
+            videoLink: "https://www.youtube.com/watch?v=pao-de-queijo-video",
+        },
+        {
+            name: "Brigadeiro",
+            image: "/images/brigadeiro.jpg",
+            description:
+                "Sweet chocolate truffles made with condensed milk and cocoa.",
+            videoLink: "https://www.youtube.com/watch?v=brigadeiro-video",
+        },
+    ],
+    festivals: [
+        {
+            name: "Carnival",
+            image: "/images/carnival.jpg",
+            description:
+                "The biggest festival in Brazil with samba parades and colorful costumes.",
+            videoLink: "https://www.youtube.com/watch?v=carnival-video",
+        },
+        {
+            name: "Festa Junina",
+            image: "/images/festa-junina.jpg",
+            description:
+                "A June festival celebrating rural life with traditional food and dances.",
+            videoLink: "https://www.youtube.com/watch?v=festa-junina-video",
+        },
+    ],
+    art: [
+        {
+            name: "Samba Dance",
+            image: "/images/samba.jpg",
+            description:
+                "A lively, rhythmical dance with Afro-Brazilian roots.",
+        },
+        {
+            name: "Street Art",
+            image: "/images/brazil-street-art.jpg",
+            description:
+                "Brazil is famous for its vibrant urban murals and graffiti.",
+        },
+    ],
+    music: [
+        {
+            title: "Bossa Nova",
+            videoLink: "https://www.youtube.com/watch?v=bossa-nova",
+        },
+        {
+            title: "Samba Performance",
+            videoLink: "https://www.youtube.com/watch?v=samba-performance",
+        },
+    ],
+    touristAttractions: [
+        {
+            name: "Christ the Redeemer",
+            videoLink: "https://www.youtube.com/watch?v=christ-redeemer-vr",
+        },
+        {
+            name: "Amazon Rainforest",
+            videoLink: "https://www.youtube.com/watch?v=amazon-vr",
+        },
     ],
 };
 
 export const indiaStoryData = {
-    id: "india-story",
-    title: "The Monsoon's Gift",
-    subtitle: "A tale of resilience and renewal",
     country: "India",
-    countryFlag: "/images/flags/india.png",
-    pages: [
+    headerImage: "/images/india-header.jpg",
+    greeting: {
+        text: "नमस्ते",
+        description: "This is how we greet in India",
+        audio: "audio/hindi-greeting.mp3",
+    },
+    clothing: {
+        carouselImages: [
+            "/images/sari.jpg",
+            "/images/sherwani.jpg",
+            "/images/lehenga.jpg",
+        ],
+    },
+    languages: [
         {
-            title: "First Rain",
-            image: "/images/stories/india/monsoon-village.jpg",
-            imageAlt: "Rain falling over a lush Indian village",
-            content: [
-                "In the small village of Malwadi, nestled between green hills and dry fields, a boy named Aarav awaited the monsoon season like a festival.",
-                "The clouds that gathered above were more than just weather—they were life, hope, and promise. The earth cracked from months of heat, and people prayed for the skies to open.",
-                'One evening, as Aarav and his grandmother stood outside, the wind picked up and the smell of rain filled the air. "The monsoon is near," she smiled. "And with it, change."',
+            name: "Hindi",
+            calligraphyImage: "/images/hindi-calligraphy.jpg",
+            phrases: [
+                {
+                    text: "धन्यवाद (Thank you)",
+                    audio: "audio/hindi-thankyou.mp3",
+                },
+                {
+                    text: "सुप्रभात (Good morning)",
+                    audio: "audio/hindi-goodmorning.mp3",
+                },
             ],
         },
         {
-            title: "Fields of Hope",
-            image: "/images/stories/india/paddy-fields.jpg",
-            imageAlt: "Green paddy fields after monsoon rain",
-            content: [
-                "When the rains finally came, the village transformed. Dried riverbeds overflowed, and the brown earth turned a rich, fertile green.",
-                "Aarav helped his family plant rice in the fields, his feet sinking into the soft, wet soil. Every drop of rain was a blessing.",
-                '"The monsoon is our greatest teacher," his grandmother said. "It reminds us that even the harshest times can give way to new beginnings."',
+            name: "Tamil",
+            calligraphyImage: "/images/tamil-script.jpg",
+            phrases: [
+                {
+                    text: "நன்றி (Thank you)",
+                    audio: "audio/tamil-thankyou.mp3",
+                },
+                {
+                    text: "காலை வணக்கம் (Good morning)",
+                    audio: "audio/tamil-goodmorning.mp3",
+                },
             ],
         },
     ],
-    culturalFacts: [
-        "India’s monsoon season typically begins in June and lasts through September.",
-        "Agriculture in India heavily depends on the monsoon rains, making them crucial to the country's economy.",
-        "India is home to 22 officially recognized languages, with Hindi and English being widely spoken.",
-        "The concept of ‘jugaad’ in India refers to innovative or resourceful problem-solving, often with limited resources.",
-        "Traditional Indian farming methods often follow lunar cycles and seasonal rhythms.",
+    food: [
+        {
+            name: "Biryani",
+            image: "/images/biryani.jpg",
+            description: "Aromatic spiced rice dish with meat or vegetables.",
+            videoLink: "https://www.youtube.com/watch?v=biryani-video",
+        },
+        {
+            name: "Dosa",
+            image: "/images/dosa.jpg",
+            description:
+                "Thin crispy fermented rice crepe, usually served with chutney and sambar.",
+            videoLink: "https://www.youtube.com/watch?v=dosa-video",
+        },
+        {
+            name: "Chole Bhature",
+            image: "/images/chole-bhature.jpg",
+            description: "Spicy chickpeas served with fluffy deep-fried bread.",
+            videoLink: "https://www.youtube.com/watch?v=cholebhature-video",
+        },
+    ],
+    festivals: [
+        {
+            name: "Diwali",
+            image: "/images/diwali.jpg",
+            description:
+                "Festival of Lights symbolizing victory of light over darkness.",
+            videoLink: "https://www.youtube.com/watch?v=diwali-festival",
+        },
+        {
+            name: "Holi",
+            image: "/images/holi.jpg",
+            description:
+                "Festival of Colors celebrating love and the arrival of spring.",
+            videoLink: "https://www.youtube.com/watch?v=holi-festival",
+        },
+    ],
+    art: [
+        {
+            name: "Madhubani",
+            image: "/images/madhubani.jpg",
+            description:
+                "Folk art from Bihar characterized by intricate patterns and vibrant colors.",
+        },
+        {
+            name: "Rangoli",
+            image: "/images/rangoli.jpg",
+            description:
+                "Colorful patterns made on the ground using colored powders.",
+        },
+    ],
+    music: [
+        {
+            title: "Sitar Performance",
+            videoLink: "https://www.youtube.com/watch?v=sitar-performance",
+        },
+        {
+            title: "Tabla Solo",
+            videoLink: "https://www.youtube.com/watch?v=tabla-solo",
+        },
+    ],
+    touristAttractions: [
+        {
+            name: "Taj Mahal",
+            videoLink: "https://www.youtube.com/watch?v=tajmahal-vr",
+        },
+        {
+            name: "Jaipur - The Pink City",
+            videoLink: "https://www.youtube.com/watch?v=jaipur-vr",
+        },
     ],
 };
 
 export const italyStoryData = {
-    id: "italy-story",
-    title: "The Artisan's Secret",
-    subtitle: "A tale of legacy and craftsmanship",
     country: "Italy",
-    countryFlag: "/images/flags/italy.png",
-    pages: [
+    headerImage: "/images/italy-header.jpg",
+    greeting: {
+        text: "Ciao",
+        description: "This is how we greet in Italy",
+        audio: "audio/italian-greeting.mp3",
+    },
+    clothing: {
+        carouselImages: [
+            "/images/renaissance-dress.jpg",
+            "/images/italian-suit.jpg",
+            "/images/traditional-folk.jpg",
+        ],
+    },
+    languages: [
         {
-            title: "The Workshop",
-            image: "/images/stories/italy/venetian-workshop.jpg",
-            imageAlt:
-                "A sunlit workshop in Venice with tools and wooden carvings",
-            content: [
-                "In a quiet alley of Venice, where canals whisper stories of centuries past, lived a young apprentice named Luca.",
-                "His grandfather, a master woodcarver, had crafted gondolas and masks that were renowned throughout the region.",
-                'Luca dreamed of becoming a great artisan, but his hands were not yet as sure as his grandfather’s. "Patience," the old man would say, "is the soul of craftsmanship."',
-            ],
-        },
-        {
-            title: "The Hidden Sketch",
-            image: "/images/stories/italy/sketchbook.jpg",
-            imageAlt:
-                "An old sketchbook with intricate designs and faded notes",
-            content: [
-                "One evening, while cleaning the attic, Luca discovered an old sketchbook filled with forgotten designs and secret techniques.",
-                "Each page told a story—of love, of war, of Venice’s golden age. Luca realized he was holding more than blueprints; it was his family’s legacy.",
-                "Guided by the book and his grandfather’s wisdom, Luca began his own masterpiece, one stroke at a time.",
+            name: "Italian",
+            calligraphyImage: "/images/italian-calligraphy.jpg",
+            phrases: [
+                {
+                    text: "Grazie (Thank you)",
+                    audio: "audio/italian-thankyou.mp3",
+                },
+                {
+                    text: "Buongiorno (Good morning)",
+                    audio: "audio/italian-goodmorning.mp3",
+                },
             ],
         },
     ],
-    culturalFacts: [
-        "Italy is home to more UNESCO World Heritage Sites than any other country.",
-        "Venetian artisans have crafted masks and gondolas for centuries, often passing skills down through generations.",
-        "The Italian concept of ‘la dolce vita’ means ‘the sweet life’—enjoying life’s pleasures and moments.",
-        "Italy was the birthplace of the Renaissance, which revolutionized art, architecture, and thought.",
-        "Traditional Italian craftsmanship includes leatherworking, glassblowing (especially in Murano), and shoemaking.",
+    food: [
+        {
+            name: "Pizza Margherita",
+            image: "/images/pizza.jpg",
+            description:
+                "Classic Italian pizza with tomatoes, mozzarella, and basil.",
+            videoLink: "https://www.youtube.com/watch?v=pizza-video",
+        },
+        {
+            name: "Pasta Carbonara",
+            image: "/images/carbonara.jpg",
+            description: "Pasta with eggs, cheese, pancetta, and pepper.",
+            videoLink: "https://www.youtube.com/watch?v=carbonara-video",
+        },
+        {
+            name: "Tiramisu",
+            image: "/images/tiramisu.jpg",
+            description:
+                "Coffee-flavored Italian dessert with layers of mascarpone and cocoa.",
+            videoLink: "https://www.youtube.com/watch?v=tiramisu-video",
+        },
+    ],
+    festivals: [
+        {
+            name: "Carnevale di Venezia",
+            image: "/images/venice-carnival.jpg",
+            description:
+                "Famous for elaborate masks and costumes, held before Lent.",
+            videoLink: "https://www.youtube.com/watch?v=venice-carnival",
+        },
+        {
+            name: "Ferragosto",
+            image: "/images/ferragosto.jpg",
+            description:
+                "National holiday celebrated in mid-August with feasts and festivals.",
+            videoLink: "https://www.youtube.com/watch?v=ferragosto-festival",
+        },
+    ],
+    art: [
+        {
+            name: "Michelangelo’s David",
+            image: "/images/david.jpg",
+            description:
+                "Renaissance sculpture known for its detail and expression.",
+        },
+        {
+            name: "Venetian Glass Art",
+            image: "/images/venetian-glass.jpg",
+            description:
+                "Intricate glasswork traditionally made on the island of Murano.",
+        },
+    ],
+    music: [
+        {
+            title: "Opera Performance",
+            videoLink: "https://www.youtube.com/watch?v=opera-performance",
+        },
+        {
+            title: "Classical Violin Solo",
+            videoLink: "https://www.youtube.com/watch?v=violin-solo",
+        },
+    ],
+    touristAttractions: [
+        {
+            name: "Colosseum",
+            videoLink: "https://www.youtube.com/watch?v=colosseum-vr",
+        },
+        {
+            name: "Venice Canals",
+            videoLink: "https://www.youtube.com/watch?v=venice-vr",
+        },
     ],
 };
 
 export const japanStoryData = {
-    id: "japan-story",
-    title: "The Cherry Blossom Promise",
-    subtitle: "A tale of fleeting beauty and eternal bonds",
     country: "Japan",
-    countryFlag: "/images/flags/japan.png",
-    pages: [
+    headerImage: "/images/japan-header.jpg",
+    greeting: {
+        text: "こんにちは",
+        description: "This is how we greet in Japan",
+        audio: "audio/japanese-greeting.mp3",
+    },
+    clothing: {
+        carouselImages: [
+            "/images/kimono1.jpg",
+            "/images/yukata.jpg",
+            "/images/traditional-robe.jpeg",
+        ],
+    },
+    languages: [
         {
-            title: "Petals in the Wind",
-            image: "/images/stories/japan/cherry-blossoms.jpg",
-            imageAlt: "Cherry blossoms falling in a serene Japanese park",
-            content: [
-                "In Kyoto, beneath the soft pink petals of the sakura trees, a girl named Hana met her best friend Aiko each spring.",
-                "They would sit beneath the blooms, laughing and writing poems, knowing the flowers would last only a few days.",
-                '"Sakura remind us," Aiko once said, "that nothing lasts forever—but memories do."',
+            name: "Japanese",
+            calligraphyImage: "/images/japanese-calligraphy.jpg",
+            phrases: [
+                {
+                    text: "ありがとう (Thank you)",
+                    audio: "audio/arigatou.mp3",
+                },
+                {
+                    text: "おはよう (Good morning)",
+                    audio: "audio/ohayou.mp3",
+                },
             ],
         },
         {
-            title: "A Promise Kept",
-            image: "/images/stories/japan/mountain-temple.jpg",
-            imageAlt: "A small temple on a misty mountain trail",
-            content: [
-                "Years later, Hana returned alone to the temple path they had once walked. Aiko had moved away, but their bond remained.",
-                "As petals floated down once more, Hana unfolded a letter Aiko had sent. Inside was a haiku: 'Though blossoms may fall, / Our promise beneath still blooms / In spring’s quiet breath.'",
-                'With a smile, Hana whispered, "I remember." And the trees seemed to whisper back.',
+            name: "Ainu",
+            calligraphyImage: "/images/ainu-script.jpg",
+            phrases: [
+                {
+                    text: "Iyairaikere (Thank you)",
+                    audio: "audio/ainu-thankyou.mp3",
+                },
+                {
+                    text: "Irankarapte (Hello)",
+                    audio: "audio/ainu-hello.mp3",
+                },
             ],
         },
     ],
-    culturalFacts: [
-        "Cherry blossom season (sakura) is celebrated across Japan in spring with festivals and picnics.",
-        "The Japanese concept of ‘mono no aware’ expresses a gentle sadness for the impermanence of things.",
-        "Japan is an archipelago of over 6,800 islands.",
-        "Traditional Japanese poetry, such as haiku, often reflects nature and the seasons.",
-        "Temples and shrines are central to Japanese culture, blending Shinto and Buddhist influences.",
+    food: [
+        {
+            name: "Sushi",
+            image: "/images/sushi.jpg",
+            description: "Vinegared rice topped with raw fish or seafood.",
+            videoLink: "https://www.youtube.com/watch?v=sushi-video",
+        },
+        {
+            name: "Ramen",
+            image: "/images/ramen.jpeg",
+            description: "Noodle soup with rich broth and various toppings.",
+            videoLink: "https://www.youtube.com/watch?v=ramen-video",
+        },
+        {
+            name: "Okonomiyaki",
+            image: "/images/okonomiyaki.jpg",
+            description: "A savory pancake with meats, vegetables, and sauces.",
+            videoLink: "https://www.youtube.com/watch?v=okonomiyaki-video",
+        },
+    ],
+    festivals: [
+        {
+            name: "Gion Matsuri",
+            image: "/images/gion-matsuri.jpg",
+            description:
+                "Kyoto's most famous festival with floats and traditional dress.",
+            videoLink: "https://www.youtube.com/watch?v=gion-festival",
+        },
+        {
+            name: "Tanabata",
+            image: "/images/tanabata.jpeg",
+            description:
+                "Star festival celebrating the meeting of two deities.",
+            videoLink: "https://www.youtube.com/watch?v=tanabata-festival",
+        },
+    ],
+    art: [
+        {
+            name: "Ukiyo-e",
+            image: "/images/ukiyoe.jpeg",
+            description:
+                "Traditional woodblock prints depicting daily life and nature.",
+        },
+        {
+            name: "Origami",
+            image: "/images/origami.jpg",
+            description: "The Japanese art of paper folding.",
+        },
+    ],
+    music: [
+        {
+            title: "Koto Performance",
+            videoLink: "https://www.youtube.com/watch?v=koto-performance",
+        },
+        {
+            title: "Taiko Drumming",
+            videoLink: "https://www.youtube.com/watch?v=taiko-drums",
+        },
+    ],
+    touristAttractions: [
+        {
+            name: "Mount Fuji",
+            videoLink: "https://www.youtube.com/watch?v=mount-fuji-vr",
+        },
+        {
+            name: "Fushimi Inari Shrine",
+            videoLink: "https://www.youtube.com/watch?v=fushimi-vr",
+        },
     ],
 };

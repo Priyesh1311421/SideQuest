@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import LoginModal from "./LoginModal";
@@ -19,6 +19,12 @@ const Header = (props) => {
     const [isDesktopStoriesOpen, setIsDesktopStoriesOpen] = useState(false);
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
     const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        setIsAuthenticated(!!token);
+    }, []);
 
     const openLoginModal = () => {
         setIsLoginModalOpen(true);
@@ -26,6 +32,7 @@ const Header = (props) => {
 
     const closeLoginModal = () => {
         setIsLoginModalOpen(false);
+        setIsAuthenticated(true);
     };
 
     const openSignupModal = () => {
@@ -34,6 +41,12 @@ const Header = (props) => {
 
     const closeSignupModal = () => {
         setIsSignupModalOpen(false);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("userId");
+        setIsAuthenticated(false);
     };
 
     return (
@@ -49,12 +62,21 @@ const Header = (props) => {
                         </span>
                     </a>
                     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse relative">
-                        <button
-                            onClick={openLoginModal}
-                            className="text-white bg-green-500 hover:bg-green-600 font-medium rounded-xl text-sm px-4 py-2 text-center"
-                        >
-                            Login
-                        </button>
+                        {isAuthenticated ? (
+                            <button
+                                onClick={handleLogout}
+                                className="text-white bg-red-500 hover:bg-red-600 font-medium rounded-xl text-sm px-4 py-2 text-center"
+                            >
+                                Logout
+                            </button>
+                        ) : (
+                            <button
+                                onClick={openLoginModal}
+                                className="text-white bg-green-500 hover:bg-green-600 font-medium rounded-xl text-sm px-4 py-2 text-center"
+                            >
+                                Login
+                            </button>
+                        )}
                         <button
                             type="button"
                             className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-600 rounded-lg md:hidden hover:bg-gray-200 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-300"
@@ -212,9 +234,16 @@ const Header = (props) => {
                     <div className="hidden md:flex md:w-auto md:order-1">
                         <ul className="flex flex-row space-x-8 items-center">
                             <li>
-                            <Link to="/" className={`block py-2 px-3 ${isActive("/") ? "text-blue-500 font-medium" : "text-zinc-700 hover:text-blue-500"}`}>
-  Home
-</Link>
+                                <Link
+                                    to="/"
+                                    className={`block py-2 px-3 ${
+                                        isActive("/")
+                                            ? "text-blue-500 font-medium"
+                                            : "text-zinc-700 hover:text-blue-500"
+                                    }`}
+                                >
+                                    Home
+                                </Link>
                             </li>
                             <li>
                                 <Link
@@ -329,8 +358,6 @@ const Header = (props) => {
                                 </ul>
                             </li>
                             {/* Dropdown ends here */}
-
-
                         </ul>
                     </div>
                 </div>
