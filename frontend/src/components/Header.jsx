@@ -205,18 +205,6 @@ const Header = (props) => {
                                         </li>
                                     </ul>
                                 </li>
-                                <li>
-                                    <Link
-                                        to="/about"
-                                        className={`block py-2 px-3 ${
-                                            isActive("/about")
-                                                ? "text-blue-500 font-medium"
-                                                : "text-zinc-700 hover:text-blue-500"
-                                        }`}
-                                    >
-                                        About
-                                    </Link>
-                                </li>
                             </ul>
                         </div>
                     </div>
@@ -342,18 +330,7 @@ const Header = (props) => {
                             </li>
                             {/* Dropdown ends here */}
 
-                            <li>
-                                <Link
-                                    to="/about"
-                                    className={`block py-2 px-3 ${
-                                        isActive("/about")
-                                            ? "text-blue-500 font-medium"
-                                            : "text-zinc-700 hover:text-blue-500"
-                                    }`}
-                                >
-                                    About
-                                </Link>
-                            </li>
+
                         </ul>
                     </div>
                 </div>
