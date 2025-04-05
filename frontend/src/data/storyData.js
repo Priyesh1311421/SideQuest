@@ -1,4 +1,4 @@
-
+// Example story data structure for Brazil - you would create similar objects for other countries
 export const brazilStoryData = {
     country: "Brazil",
     headerImage: "/images/brazil-header.jpg",
@@ -343,7 +343,7 @@ export const italyStoryData = {
 
 export const japanStoryData = {
     country: "Japan",
-    headerImage: "/images/japan-header.jpg",
+    headerImage: "/images/japan/japan-header.jpg",
     greeting: {
         text: "こんにちは",
         description: "This is how we greet in Japan",
@@ -351,15 +351,15 @@ export const japanStoryData = {
     },
     clothing: {
         carouselImages: [
-            "/images/kimono1.jpg",
-            "/images/yukata.jpg",
-            "/images/traditional-robe.jpeg",
+            "/images/japan/kimono1.jpg",
+            "/images/japan/yukata.jpg",
+            "/images/japan/traditional-robe.jpeg",
         ],
     },
     languages: [
         {
             name: "Japanese",
-            calligraphyImage: "/images/japanese-calligraphy.jpg",
+            calligraphyImage: "/images/japan/japanese-calligraphy.jpg",
             phrases: [
                 {
                     text: "ありがとう (Thank you)",
@@ -373,7 +373,7 @@ export const japanStoryData = {
         },
         {
             name: "Ainu",
-            calligraphyImage: "/images/ainu-script.jpg",
+            calligraphyImage: "/images/japan/ainu-script.jpg",
             phrases: [
                 {
                     text: "Iyairaikere (Thank you)",
@@ -389,19 +389,19 @@ export const japanStoryData = {
     food: [
         {
             name: "Sushi",
-            image: "/images/sushi.jpg",
+            image: "/images/japan/sushi.jpg",
             description: "Vinegared rice topped with raw fish or seafood.",
             videoLink: "https://www.youtube.com/watch?v=sushi-video",
         },
         {
             name: "Ramen",
-            image: "/images/ramen.jpeg",
+            image: "/images/japan/ramen.jpeg",
             description: "Noodle soup with rich broth and various toppings.",
             videoLink: "https://www.youtube.com/watch?v=ramen-video",
         },
         {
             name: "Okonomiyaki",
-            image: "/images/okonomiyaki.jpg",
+            image: "/images/japan/okonomiyaki.jpg",
             description: "A savory pancake with meats, vegetables, and sauces.",
             videoLink: "https://www.youtube.com/watch?v=okonomiyaki-video",
         },
@@ -409,14 +409,14 @@ export const japanStoryData = {
     festivals: [
         {
             name: "Gion Matsuri",
-            image: "/images/gion-matsuri.jpg",
+            image: "/images/japan/gion-matsuri.jpg",
             description:
                 "Kyoto's most famous festival with floats and traditional dress.",
             videoLink: "https://www.youtube.com/watch?v=gion-festival",
         },
         {
             name: "Tanabata",
-            image: "/images/tanabata.jpeg",
+            image: "/images/japan/tanabata.jpeg",
             description:
                 "Star festival celebrating the meeting of two deities.",
             videoLink: "https://www.youtube.com/watch?v=tanabata-festival",
@@ -425,13 +425,13 @@ export const japanStoryData = {
     art: [
         {
             name: "Ukiyo-e",
-            image: "/images/ukiyoe.jpeg",
+            image: "/images/japan/ukiyoe.jpeg",
             description:
                 "Traditional woodblock prints depicting daily life and nature.",
         },
         {
             name: "Origami",
-            image: "/images/origami.jpg",
+            image: "/images/japan/origami.jpg",
             description: "The Japanese art of paper folding.",
         },
     ],
