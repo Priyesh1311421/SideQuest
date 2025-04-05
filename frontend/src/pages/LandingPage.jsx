@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { TypewriterEffectSmooth } from "../components/Typewritter-effect";
+import Chat from "./Chat";
 
 const LandingPage = () => {
 
