@@ -1,23 +1,23 @@
 // Example story data structure for Brazil - you would create similar objects for other countries
 export const brazilStoryData = {
     country: "Brazil",
-    headerImage: "/images/brazil-header.jpg",
+    headerImage: "/images/brazil/brazil-header.jpeg",
     greeting: {
         text: "Olá",
         description: "This is how we greet in Brazil",
-        audio: "audio/portuguese-greeting.mp3",
+        audio: "audio/brazilian-greeting.mp3",
     },
     clothing: {
         carouselImages: [
-            "/images/baiana-dress.jpg",
-            "/images/carnival-costume.jpg",
-            "/images/indigenous-brazil.jpg",
+            "/images/brazil/baiana-dress.jpeg",
+            "/images/brazil/gaucho-attire.jpeg",
+            "/images/brazil/samba-costume.jpg",
         ],
     },
     languages: [
         {
             name: "Portuguese",
-            calligraphyImage: "/images/portuguese-calligraphy.jpg",
+            calligraphyImage: "/images/brazil/portuguese-calligraphy.jpg",
             phrases: [
                 {
                     text: "Obrigado (Thank you)",
@@ -31,15 +31,15 @@ export const brazilStoryData = {
         },
         {
             name: "Tupi",
-            calligraphyImage: "/images/tupi-script.jpg",
+            calligraphyImage: "/images/brazil/tupi-script.png",
             phrases: [
                 {
-                    text: "Abá (Man)",
-                    audio: "audio/aba.mp3",
+                    text: "Abaeté (True friend)",
+                    audio: "audio/abaete.mp3",
                 },
                 {
-                    text: "Oré (We - inclusive)",
-                    audio: "audio/ore.mp3",
+                    text: "Iara (Lady of the water)",
+                    audio: "audio/iara.mp3",
                 },
             ],
         },
@@ -47,63 +47,63 @@ export const brazilStoryData = {
     food: [
         {
             name: "Feijoada",
-            image: "/images/feijoada.jpg",
-            description: "A hearty stew of black beans with pork and beef.",
-            videoLink: "https://www.youtube.com/watch?v=feijoada-video",
+            image: "/images/brazil/feijoada.jpg",
+            description:
+                "A hearty black bean stew with pork, traditionally served with rice.",
+            videoLink: "https://www.youtube.com/watch?v=feijoada-recipe",
         },
         {
             name: "Pão de Queijo",
-            image: "/images/pao-de-queijo.jpg",
-            description:
-                "Chewy cheese bread rolls, popular for breakfast or snacks.",
-            videoLink: "https://www.youtube.com/watch?v=pao-de-queijo-video",
+            image: "/images/brazil/pao-de-queijo.jpeg",
+            description: "Chewy cheese bread balls, a popular snack in Brazil.",
+            videoLink: "https://www.youtube.com/watch?v=pao-de-queijo-recipe",
         },
         {
-            name: "Brigadeiro",
-            image: "/images/brigadeiro.jpg",
+            name: "Moqueca",
+            image: "/images/brazil/moqueca.jpeg",
             description:
-                "Sweet chocolate truffles made with condensed milk and cocoa.",
-            videoLink: "https://www.youtube.com/watch?v=brigadeiro-video",
+                "A flavorful fish stew cooked with coconut milk, tomatoes, and spices.",
+            videoLink: "https://www.youtube.com/watch?v=moqueca-recipe",
         },
     ],
     festivals: [
         {
             name: "Carnival",
-            image: "/images/carnival.jpg",
+            image: "/images/brazil/carnival.jpg",
             description:
-                "The biggest festival in Brazil with samba parades and colorful costumes.",
-            videoLink: "https://www.youtube.com/watch?v=carnival-video",
+                "Brazil's most famous festival featuring samba parades and vibrant costumes.",
+            videoLink: "https://www.youtube.com/watch?v=carnival-parade",
         },
         {
             name: "Festa Junina",
-            image: "/images/festa-junina.jpg",
+            image: "/images/brazil/festa-junina.jpeg",
             description:
-                "A June festival celebrating rural life with traditional food and dances.",
-            videoLink: "https://www.youtube.com/watch?v=festa-junina-video",
+                "A traditional festival celebrating rural life with dances, music, and food.",
+            videoLink: "https://www.youtube.com/watch?v=festa-junina",
         },
     ],
     art: [
         {
-            name: "Samba Dance",
-            image: "/images/samba.jpg",
+            name: "Baroque Architecture",
+            image: "/images/brazil/baroque-architecture.jpg",
             description:
-                "A lively, rhythmical dance with Afro-Brazilian roots.",
+                "Ornate colonial-era churches and buildings, especially in Ouro Preto.",
         },
         {
-            name: "Street Art",
-            image: "/images/brazil-street-art.jpg",
+            name: "Woodcarving",
+            image: "/images/brazil/woodcarving.jpg",
             description:
-                "Brazil is famous for its vibrant urban murals and graffiti.",
+                "Intricate wooden sculptures reflecting Afro-Brazilian heritage.",
         },
     ],
     music: [
         {
-            title: "Bossa Nova",
-            videoLink: "https://www.youtube.com/watch?v=bossa-nova",
-        },
-        {
             title: "Samba Performance",
             videoLink: "https://www.youtube.com/watch?v=samba-performance",
+        },
+        {
+            title: "Bossa Nova Classics",
+            videoLink: "https://www.youtube.com/watch?v=bossa-nova",
         },
     ],
     touristAttractions: [
@@ -112,8 +112,8 @@ export const brazilStoryData = {
             videoLink: "https://www.youtube.com/watch?v=christ-redeemer-vr",
         },
         {
-            name: "Amazon Rainforest",
-            videoLink: "https://www.youtube.com/watch?v=amazon-vr",
+            name: "Iguaçu Falls",
+            videoLink: "https://www.youtube.com/watch?v=iguacu-falls-vr",
         },
     ],
 };
@@ -343,7 +343,7 @@ export const italyStoryData = {
 
 export const japanStoryData = {
     country: "Japan",
-    headerImage: "/images/japan/japan-header.jpg",
+    headerImage: "/images/japan/japan-header.jpeg",
     greeting: {
         text: "こんにちは",
         description: "This is how we greet in Japan",
