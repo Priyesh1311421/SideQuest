@@ -3,9 +3,8 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User'); // adjust this path if needed
 const Room = require('../models/Room');
 const authController = require('../controllers/authController');
+const JWT_SECRET = require('../../config').JWT_SECRET; // adjust this path if needed
 const router = express.Router();
-
-const JWT_SECRET = process.env.JWT_SECRET || 'shivesh';
 
 // Signup
 router.post('/signup', async (req, res) => {

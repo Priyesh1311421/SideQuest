@@ -32,28 +32,6 @@ function App() {
       {/* Sign-in / Sign-up */}
       <Route path="/sign-in" element={<SignInPage />} />
       <Route path="/sign-up" element={<SignUpPage />} />
-
-      {/* Protected routes */}
-      <Route path="/voice-chat" element={
-        <>
-          <SignedIn>
-            <VoiceChatPage />
-          </SignedIn>
-          <SignedOut>
-            <RedirectToSignIn />
-          </SignedOut>
-        </>
-      } />
-      <Route path="/text-chat" element={
-        <>
-          <SignedIn>
-            <TextChatPage />
-          </SignedIn>
-          <SignedOut>
-            <RedirectToSignIn />
-          </SignedOut>
-        </>
-      } />
     </Routes>
   )
 }
