@@ -10,7 +10,7 @@ const authenticateClerkUser = async (req, res, next) => {
     }
 
     const token = authHeader.split(' ')[1];
-    const payload = await verifyToken(token);
+    const payload = await vverifyToken(token, { secretKey: process.env.CLERK_SECRET_KEY });
 
     // Find user or create if doesn't exist
     let user = await User.findOne({ clerkId: payload.sub });
