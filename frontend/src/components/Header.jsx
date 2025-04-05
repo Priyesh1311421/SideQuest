@@ -1,9 +1,15 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import LoginModal from './LoginModal';
+
+
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [isStoriesOpen, setIsStoriesOpen] = useState(false);
+    const [isDesktopStoriesOpen, setIsDesktopStoriesOpen] = useState(false);
+    const [isLoginOpen, setIsLoginOpen] = useState(false);
+
 
     return (
         <nav className="bg-stone-100 fixed w-full z-20 top-0 start-0 border-b border-gray-300 dark:border-gray-600">
@@ -14,11 +20,12 @@ const Header = () => {
                     </span>
                 </a>
                 <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse relative">
-                    <Link to="/timer">
-                        <button className="text-white bg-green-500 hover:bg-green-600 font-medium rounded-xl text-sm px-4 py-2 text-center">
-                            Login
-                        </button>
-                    </Link>
+                    <button
+                        onClick={() => setIsLoginOpen(true)} 
+                        className="text-white bg-green-500 hover:bg-green-600 font-medium rounded-xl text-sm px-4 py-2 text-center">
+                        Login
+                    </button>
+                    <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
                     <button 
                         type="button" 
                         className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-600 rounded-lg md:hidden hover:bg-gray-200 focus:outline-none dark:text-gray-400 dark:hover:bg-gray-300"
@@ -98,11 +105,21 @@ const Header = () => {
                         </li>
 
                         {/* Dropdown starts here */}
-                        <li className="relative group">
-                            <button className="block py-2 px-3 text-zinc-700 hover:text-blue-500 focus:outline-none">
+                        <li className="relative">
+                            <button
+                                onClick={() => setIsDesktopStoriesOpen(!isDesktopStoriesOpen)}
+                                className="block py-2 px-3 text-zinc-700 hover:text-blue-500 focus:outline-none flex items-center"
+                            >
                                 Cultural Stories
+                                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                                </svg>
                             </button>
-                            <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-opacity duration-200 z-10">
+                            <ul
+                                className={`absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg z-10 transition-opacity duration-200 ${
+                                    isDesktopStoriesOpen ? "opacity-100 visible" : "opacity-0 invisible"
+                                }`}
+                            >
                                 <li>
                                     <Link to="/stories/brazil" className="block px-4 py-2 text-sm text-zinc-700 hover:bg-blue-100">
                                         Brazil
