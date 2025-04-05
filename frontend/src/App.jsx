@@ -22,7 +22,7 @@ function App() {
         <PeerProvider>
         <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/voice-chat/" element={<VoiceChatPage />} />
+            <Route path="/voice-chat/:" element={<VoiceChatPage />} />
             <Route path="/text-chat" element={<TextChatPage />} />
             <Route path="/chat-room/:roomId" element={<ChatRoomPage />} />
             <Route path="/room/:roomId" element={<RoomPage />} />

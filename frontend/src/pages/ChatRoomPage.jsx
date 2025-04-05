@@ -4,7 +4,7 @@ import axios from "axios";
 import Layout from "../components/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Send, ArrowLeft, ArrowUpRight, ArrowDownRight } from "lucide-react";
+import { Send, ArrowLeft, User, Users, Loader2 } from "lucide-react";
 
 // Function to call DeepSeek R1 via OpenRouter API
 const callOpenRouter = async (prompt) => {
@@ -50,6 +50,7 @@ const ChatRoomPage = () => {
 
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
+  const [loadingTranslations, setLoadingTranslations] = useState({});
   const ws = useRef(null);
   const messagesEndRef = useRef(null);
   const chatContainerRef = useRef(null);
@@ -177,91 +178,122 @@ const ChatRoomPage = () => {
   };
 
   const handleTranslate = async (msg, index) => {
-    const translated = await translate(msg.message);
+    // Set loading state for this specific message
+    setLoadingTranslations(prev => ({ ...prev, [index]: true }));
+    
+    try {
+      const translated = await translate(msg.message);
 
-    setMessages((prevMessages) => {
-      const updated = [...prevMessages];
-      updated[index].message = translated;
-      return updated;
-    });
+      setMessages((prevMessages) => {
+        const updated = [...prevMessages];
+        updated[index].message = translated;
+        return updated;
+      });
+    } finally {
+      // Clear loading state regardless of success or failure
+      setLoadingTranslations(prev => ({ ...prev, [index]: false }));
+    }
   };
 
   return (
     <Layout>
-      <div className="flex flex-col h-screen max-h-[calc(100vh-4rem)] relative max-w-4xl mx-auto px-6">
+      <div className="flex flex-col h-screen max-h-[calc(100vh-4rem)] relative max-w-4xl mx-auto">
         {/* Header */}
-        <div className="bg-white border-b p-4 flex items-center justify-between shadow-sm sticky top-0 z-10">
-          <div className="flex items-center">
+        <div className="bg-white border-b p-4 flex items-center justify-between sticky top-0 z-10 shadow-md">
+          <div className="flex items-center space-x-3">
             <Button
               variant="ghost"
               size="icon"
-              className="mr-2"
+              className="hover:bg-gray-100 rounded-full"
               onClick={handleBackToRooms}
             >
-              <ArrowLeft size={18} />
+              <ArrowLeft size={20} />
             </Button>
-            <h1 className="text-xl font-bold">{roomName}</h1>
+            <div className="flex items-center">
+              <div className="bg-blue-100 rounded-full p-2 mr-3">
+                <Users size={20} className="text-blue-600" />
+              </div>
+              <div>
+                <h1 className="text-lg font-semibold">{roomName}</h1>
+                <p className="text-xs text-gray-500">{messages.length} messages</p>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Messages */}
-        <div className="flex-1 overflow-y-auto p-6 bg-gray-50" ref={chatContainerRef}>
+        <div 
+          className="flex-1 overflow-y-auto p-4 md:p-6 bg-gradient-to-b from-blue-50 to-gray-50" 
+          ref={chatContainerRef}
+        >
           {messages.length === 0 ? (
-            <div className="flex items-center justify-center h-full text-gray-500">
-              <p>No messages yet. Be the first to say hello!</p>
+            <div className="flex flex-col items-center justify-center h-full text-gray-500 space-y-4">
+              <div className="bg-blue-100 p-4 rounded-full">
+                <Users size={32} className="text-blue-600" />
+              </div>
+              <p className="text-center font-medium">No messages yet.</p>
+              <p className="text-sm text-center text-gray-400">Be the first to say hello in this room!</p>
             </div>
           ) : (
-            <div className="space-y-6">
+            <div className="space-y-4 pt-2">
               {messages.map((msg, idx) => {
                 const isCurrentUser = msg.senderId === userId;
+                const showDateDivider = idx === 0 || 
+                  new Date(messages[idx-1]?.timestamp).toLocaleDateString() !== 
+                  new Date(msg.timestamp).toLocaleDateString();
+                
                 return (
-                  <div
-                    key={idx}
-                    className={`flex ${isCurrentUser ? "justify-end" : "justify-start"}`}
-                  >
-                    <div className={`flex max-w-[80%] ${isCurrentUser ? "flex-row-reverse" : "flex-row"}`}>
-                      <div
-                        className={`flex items-center justify-center h-8 w-8 rounded-full ${
-                          isCurrentUser ? "bg-blue-500 ml-2" : "bg-gray-200 mr-2"
-                        }`}
-                      >
-                        {isCurrentUser ? (
-                          <ArrowUpRight size={14} className="text-white" />
-                        ) : (
-                          <ArrowDownRight size={14} className="text-gray-600" />
-                        )}
+                  <div key={idx}>
+                    {showDateDivider && (
+                      <div className="flex justify-center my-4">
+                        <div className="bg-gray-200 text-gray-600 text-xs px-3 py-1 rounded-full">
+                          Today
+                        </div>
                       </div>
-                      <div>
+                    )}
+                    <div
+                      className={`flex ${isCurrentUser ? "justify-end" : "justify-start"} mb-2`}
+                    >
+                      <div className={`flex max-w-[75%] ${isCurrentUser ? "flex-row-reverse" : "flex-row"}`}>
                         <div
-                          className={`rounded-2xl py-3 px-4 ${
-                            isCurrentUser
-                              ? "bg-blue-500 text-white"
-                              : "bg-white border shadow-sm"
-                          }`}
+                          className={`flex items-center justify-center h-8 w-8 rounded-full 
+                            ${isCurrentUser ? "bg-blue-600 ml-2" : "bg-gray-300 mr-2"}`}
                         >
-                          <p>{msg.message}</p>
+                          <User size={14} className={isCurrentUser ? "text-white" : "text-gray-700"} />
                         </div>
-                        <div
-                          className={`text-xs text-gray-500 mt-1 ${
-                            isCurrentUser ? "text-right" : "text-left"
-                          }`}
-                        >
-                          {msg.timestamp}
-                        </div>
-                        {!isCurrentUser && (
+                        <div>
                           <div
-                            className={`text-xs text-gray-500 mt-1 ${
-                              isCurrentUser ? "text-right" : "text-left"
-                            }`}
+                            className={`rounded-2xl py-3 px-4 
+                              ${isCurrentUser
+                                ? "bg-blue-600 text-white rounded-tr-none"
+                                : "bg-white text-gray-800 shadow-sm rounded-tl-none"
+                              }`}
                           >
-                            <button
-                              className="hover:text-blue-500 hover:underline hover:cursor-pointer"
-                              onClick={() => handleTranslate(msg, idx)}
-                            >
-                              Translate
-                            </button>
+                            <p className="leading-relaxed">{msg.message}</p>
                           </div>
-                        )}
+                          <div
+                            className={`text-xs text-gray-500 mt-1 flex items-center
+                              ${isCurrentUser ? "justify-end" : "justify-start"}`}
+                          >
+                            <span>{msg.timestamp}</span>
+                            {!isCurrentUser && (
+                              <button
+                                className="ml-3 flex items-center text-blue-600 hover:underline hover:cursor-pointer"
+                                onClick={() => handleTranslate(msg, idx)}
+                                disabled={loadingTranslations[idx]}
+                              >
+                                {loadingTranslations[idx] ? (
+                                  <>
+                                    <Loader2 size={12} className="mr-1 animate-spin" />
+                                    <span>Translating...</span>
+                                  </>
+                                ) : (
+                                  <span>Translate</span>
+                                )}
+                              </button>
+                            )}
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -273,16 +305,20 @@ const ChatRoomPage = () => {
         </div>
 
         {/* Input */}
-        <div className="border-t bg-white p-4 sticky bottom-0 z-10">
-          <div className="flex space-x-2">
+        <div className="border-t bg-white p-4 sticky bottom-0 z-10 shadow-lg">
+          <div className="flex space-x-2 bg-gray-50 p-1 rounded-full shadow-inner">
             <Input
               value={newMessage}
               onChange={(e) => setNewMessage(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && sendMessage()}
               placeholder="Type a message..."
-              className="flex-1"
+              className="flex-1 border-none focus:ring-0 bg-transparent"
             />
-            <Button onClick={sendMessage} size="icon">
+            <Button 
+              onClick={sendMessage} 
+              size="icon" 
+              className="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center"
+            >
               <Send size={18} />
             </Button>
           </div>

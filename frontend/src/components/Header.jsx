@@ -1,5 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 import LoginModal from "./LoginModal";
 import SignupModal from "./SignupModal";
@@ -9,6 +11,8 @@ const Header = (props) => {
     const { currentPath } = props;
 
     const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
+    const navigate = useNavigate();
+
 
     const isActive = (path) => {
         if (path === "/") {
@@ -16,6 +20,7 @@ const Header = (props) => {
         }
         return currentPath.startsWith(path);
     };
+    
 
     const [isOpen, setIsOpen] = useState(false);
     const [isStoriesOpen, setIsStoriesOpen] = useState(false);
@@ -73,6 +78,8 @@ const Header = (props) => {
         localStorage.removeItem("token");
         localStorage.removeItem("userId");
         setIsAuthenticated(false);
+        navigate("/");
+
     };
 
     return (
