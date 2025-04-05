@@ -2,7 +2,7 @@
 import React from "react";
 import Layout from "../components/Layout";
 
-const TextChatPage = () => {
+const About = () => {
   return (
     <Layout>
       <div>text</div>
@@ -10,4 +10,4 @@ const TextChatPage = () => {
   );
 };
 
-export default TextChatPage;
+export default About;
