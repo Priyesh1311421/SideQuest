@@ -61,7 +61,8 @@ export default function FloatingChatbot({ apiKey }) {
         },
         body: JSON.stringify({
           model: "deepseek/deepseek-r1:free",
-          messages: [{ role: "user", content: prompt }]
+          messages: [{ role: "user", content: prompt }],
+          //max_tokens:150
         })
       });
       
@@ -94,7 +95,7 @@ export default function FloatingChatbot({ apiKey }) {
     setIsLoading(true);
     
     // Store input value and clear input field
-    const currentInput = inputText;
+    const currentInput = inputText + " in atmost 100 words";
     setInputText('');
     
     try {
@@ -133,7 +134,7 @@ export default function FloatingChatbot({ apiKey }) {
   return (
     <div className="fixed bottom-8 right-8 z-50">
       {isOpen ? (
-        <div className="bg-white rounded-lg shadow-lg w-80 h-96 flex flex-col overflow-hidden transition-all duration-300 ease-in-out">
+        <div className="bg-white rounded-lg shadow-lg w-80 h-96 flex flex-col overflow-hidden transition-all duration-300 ease-in-out min-h-[35rem] min-w-[25rem]">
           {/* Header */}
           <div className="bg-blue-600 p-4 text-white flex justify-between items-center">
             <h3 className="font-medium">Chat Assistant</h3>
