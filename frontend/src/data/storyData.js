@@ -110,12 +110,12 @@ export const brazilStoryData = {
         {
             name: "Christ the Redeemer",
             360: "https://360stories.com/rio/place/christ-the-redeemer?mode=2&playerMode=2",
-            videoLink: "https://www.youtube.com/watch?v=christ-redeemer-vr",
+            videoLink: "https://www.youtube.com/watch?v=AcYPaVvNBAw",
         },
         {
             name: "Iguaçu Falls",
             360: "https://360stories.com/rio/place/lapa-archs?mode=2&playerMode=2",
-            videoLink: "https://www.youtube.com/watch?v=iguacu-falls-vr",
+            videoLink: "https://www.youtube.com/watch?v=wJIKVHPn7J8",
         },
     ],
 };
@@ -230,12 +230,12 @@ export const indiaStoryData = {
         {
             name: "Taj Mahal",
             360: "https://www.airpano.com/embed.php?3D=taj-mahal-india-2",
-            videoLink: "https://www.youtube.com/watch?v=tajmahal-vr",
+            videoLink: "https://www.youtube.com/watch?v=61FT01wsIwI",
         },
         {
             name: "Jaipur - The Pink City",
             360: "https://www.airpano.com/embed.php?3D=jaipur-india",
-            videoLink: "https://www.youtube.com/watch?v=jaipur-vr",
+            videoLink: "https://www.youtube.com/watch?v=skJVCmI4LM4",
         },
     ],
 };
@@ -337,12 +337,12 @@ export const italyStoryData = {
         {
             name: "Colosseum",
             360:"https://360stories.com/rome/place/colosseum?mode=2",
-            videoLink: "https://www.youtube.com/watch?v=colosseum-vr",
+            videoLink: "https://www.youtube.com/watch?v=Uhjh49YkB3A",
         },
         {
             name: "Pantheon",
             360:"https://360stories.com/rome/place/pantheon?mode=2&playerMode=2",
-            videoLink: "https://www.youtube.com/watch?v=venice-vr",
+            videoLink: "https://www.youtube.com/watch?v=3TtxMFQWN7w",
         },
     ],
 };
@@ -455,12 +455,12 @@ export const japanStoryData = {
         {
             name: "Tokyo Tower",
             360: "https://360stories.com/tokyo/place/Tokyo-Tower?mode=2&playerMode=2",
-            videoLink: "https://www.youtube.com/watch?v=tokyo-tower-vr",
+            videoLink: "https://www.youtube.com/watch?v=qHi49r-F_nE",
         },
         {
             name: "Fushimi Inari Shrine",
             360: "https://360stories.com/kyoto/place/Fushimi-Inari-Taisha?mode=2&playerMode=2",
-            videoLink: "https://www.youtube.com/watch?v=fushimi-vr",
+            videoLink: "https://www.youtube.com/watch?v=Y3s-nAWggOY",
         },
     ],
 };

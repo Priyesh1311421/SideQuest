@@ -40,27 +40,29 @@ const StoryPage = ({ storyData }) => {
 
     return (
         <Layout>
+            <div className="w-full h-auto overflow-hidden shadow-lg relative">
+                <img
+                    src={storyData.headerImage}
+                    alt={`${storyData.country} landscape`}
+                    className="w-full h-full object-cover"
+                />
+
+                {/* Overlay with centered text */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/75 to-transparent flex items-center justify-center">
+                    <h1 className="text-xl md:text-[130px] font-bold opacity-40 text-white text-center">
+                        {storyData.country}
+                    </h1>
+                </div>
+            </div>
+
             <div className="container mx-auto px-4 py-8 max-w-6xl">
                 {/* Header Section */}
-                <div className="relative mb-12">
-                    <div className="w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
-                        <img
-                            src={storyData.headerImage}
-                            alt={`${storyData.country} landscape`}
-                            className="w-full h-full object-cover"
-                        />
-                    </div>
-                    <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black to-transparent p-6">
-                        <h1 className="text-4xl md:text-6xl font-bold text-white">
-                            {storyData.country}
-                        </h1>
-                    </div>
-                </div>
 
+                {/* Greeting Section */}
                 {/* Greeting Section */}
                 <Card className="mb-12 shadow-md hover:shadow-lg transition-shadow duration-300">
                     <CardContent className="p-6 md:p-8">
-                        <div className="flex flex-col md:flex-row items-center gap-6">
+                        <div className="flex flex-row md:flex-row items-center gap-6">
                             <div className="flex-1">
                                 <p className="text-4xl md:text-6xl font-bold mb-4">
                                     {storyData.greeting.text}
@@ -68,9 +70,11 @@ const StoryPage = ({ storyData }) => {
                                 <p className="text-gray-600 text-lg">
                                     {storyData.greeting.description}
                                 </p>
+                            </div>
+                            <div>
                                 {storyData.greeting.audio && (
                                     <div className="mt-6">
-                                        <audio controls className="w-full">
+                                        <audio controls className="">
                                             <source
                                                 src={storyData.greeting.audio}
                                                 type="audio/mpeg"
@@ -411,16 +415,9 @@ const StoryPage = ({ storyData }) => {
                 </Card>
 
                 {/* Tourist Attractions Section */}
-                <Card className="mb-12 shadow-md">
-                    <CardContent className="p-6 md:p-8">
-                        <h2 className="text-3xl font-bold mb-6 text-gray-800">
-                            Must-visit Places
-                        </h2>
                         <TouristCarousel
                             touristAttractions={storyData.touristAttractions}
                         />
-                    </CardContent>
-                </Card>
             </div>
         </Layout>
     );
