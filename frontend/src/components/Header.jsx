@@ -328,7 +328,7 @@ const Header = (props) => {
                                     </svg>
                                 </button>
                                 <ul
-                                    className={`absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-lg z-10 transition-opacity duration-200 ${
+                                    className={`absolute left-0 w-48 bg-white shadow-lg rounded-lg z-10 transition-opacity duration-200 ${
                                         isDesktopStoriesOpen
                                             ? "opacity-100 visible"
                                             : "opacity-0 invisible"

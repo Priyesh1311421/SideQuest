@@ -5,7 +5,7 @@ export const brazilStoryData = {
     greeting: {
         text: "Olá",
         description: "This is how we greet in Brazil",
-        audio: "audio/brazilian-greeting.mp3",
+        audio: "/audio/brazil/brazilian-greeting.mp3",
     },
     clothing: {
         carouselImages: [
@@ -21,11 +21,11 @@ export const brazilStoryData = {
             phrases: [
                 {
                     text: "Obrigado (Thank you)",
-                    audio: "audio/obrigado.mp3",
+                    audio: "/audio/brazil/obrigado.mp3",
                 },
                 {
                     text: "Bom dia (Good morning)",
-                    audio: "audio/bom-dia.mp3",
+                    audio: "/audio/brazil/bom-dia.mp3",
                 },
             ],
         },
@@ -35,11 +35,11 @@ export const brazilStoryData = {
             phrases: [
                 {
                     text: "Abaeté (True friend)",
-                    audio: "audio/abaete.mp3",
+                    audio: "/audio/brazil/abaete.mp3",
                 },
                 {
                     text: "Iara (Lady of the water)",
-                    audio: "audio/iara.mp3",
+                    audio: "/audio/brazil/iara.mp3",
                 },
             ],
         },
@@ -118,13 +118,14 @@ export const brazilStoryData = {
     ],
 };
 
+
 export const indiaStoryData = {
     country: "India",
     headerImage: "/images/india/india-header.jpg",
     greeting: {
         text: "नमस्ते",
         description: "This is how we greet in India",
-        audio: "audio/hindi-greeting.mp3",
+        audio: "/audio/india/hindi-greeting.mp3",
     },
     clothing: {
         carouselImages: [
@@ -140,11 +141,11 @@ export const indiaStoryData = {
             phrases: [
                 {
                     text: "धन्यवाद (Thank you)",
-                    audio: "audio/hindi-thankyou.mp3",
+                    audio: "/audio/india/hindi-thankyou.mp3",
                 },
                 {
                     text: "सुप्रभात (Good morning)",
-                    audio: "audio/hindi-goodmorning.mp3",
+                    audio: "/audio/india/hindi-goodmorning.mp3",
                 },
             ],
         },
@@ -154,11 +155,11 @@ export const indiaStoryData = {
             phrases: [
                 {
                     text: "நன்றி (Thank you)",
-                    audio: "audio/tamil-thankyou.mp3",
+                    audio: "/audio/india/tamil-thankyou.mp3",
                 },
                 {
                     text: "காலை வணக்கம் (Good morning)",
-                    audio: "audio/tamil-goodmorning.mp3",
+                    audio: "/audio/india/tamil-goodmorning.mp3",
                 },
             ],
         },
@@ -242,7 +243,7 @@ export const italyStoryData = {
     greeting: {
         text: "Ciao",
         description: "This is how we greet in Italy",
-        audio: "audio/italian-greeting.mp3",
+        audio: "/audio/italy/italian-greeting.mp3",
     },
     clothing: {
         carouselImages: [
@@ -258,11 +259,11 @@ export const italyStoryData = {
             phrases: [
                 {
                     text: "Grazie (Thank you)",
-                    audio: "audio/italian-thankyou.mp3",
+                    audio: "/audio/italy/italian-thankyou.mp3",
                 },
                 {
                     text: "Buongiorno (Good morning)",
-                    audio: "audio/italian-goodmorning.mp3",
+                    audio: "/audio/italy/italian-goodmorning.mp3",
                 },
             ],
         },
@@ -347,7 +348,7 @@ export const japanStoryData = {
     greeting: {
         text: "こんにちは",
         description: "This is how we greet in Japan",
-        audio: "audio/japanese-greeting.mp3",
+        audio: "/audio/japan/japanese-greeting.mp3",
     },
     clothing: {
         carouselImages: [
@@ -363,11 +364,11 @@ export const japanStoryData = {
             phrases: [
                 {
                     text: "ありがとう (Thank you)",
-                    audio: "audio/arigatou.mp3",
+                    audio: "/audio/japan/arigatou.mp3",
                 },
                 {
                     text: "おはよう (Good morning)",
-                    audio: "audio/ohayou.mp3",
+                    audio: "/audio/japan/ohayou.mp3",
                 },
             ],
         },
@@ -376,12 +377,12 @@ export const japanStoryData = {
             calligraphyImage: "/images/japan/ainu-script.jpg",
             phrases: [
                 {
-                    text: "Iyairaikere (Thank you)",
-                    audio: "audio/ainu-thankyou.mp3",
+                    text: "Irankarapte (Hello)",
+                    audio: "/audio/japan/ainu-hello.mp3",
                 },
                 {
-                    text: "Irankarapte (Hello)",
-                    audio: "audio/ainu-hello.mp3",
+                    text: "Iyairaikere (Thank you)",
+                    audio: "/audio/japan/ainu-thankyou.mp3",
                 },
             ],
         },
