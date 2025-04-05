@@ -1,32 +1,42 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
+const SignupModal = ({ isOpen, onClose, openLoginModal }) => {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
     
+    // Basic validation
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+    
     try {
-      const response = await axios.post("/api/login", {
+      const response = await axios.post("/api/signup", {
         username,
+        email,
         password,
       });
-      console.log("Login successful:", response.data);
-      onClose(); 
+      console.log("Signup successful:", response.data);
+      onClose(); // Close modal on success
+      // You can redirect to login or directly log the user in
     } catch (err) {
-      setError("Invalid credentials. Please try again.");
-      console.error("Login error:", err);
+      setError(err.response?.data?.message || "Signup failed. Please try again.");
+      console.error("Signup error:", err);
     }
   };
 
-  const handleSignupClick = (e) => {
+  const handleLoginClick = (e) => {
     e.preventDefault();
-    onClose(); // Close the login modal
-    openSignupModal(); // Open the signup modal
+    onClose(); // Close the signup modal
+    openLoginModal(); // Open the login modal
   };
 
   if (!isOpen) return null;
@@ -40,13 +50,21 @@ const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
         >
           &times;
         </button>
-        <h2 className="text-xl font-semibold mb-4 text-center">Login</h2>
+        <h2 className="text-xl font-semibold mb-4 text-center">Sign Up</h2>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <input
             type="text"
             placeholder="Username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
+            className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
@@ -58,6 +76,14 @@ const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
             className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             required
           />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            required
+          />
           {error && (
             <p className="text-sm text-red-500 text-center -mt-2">{error}</p>
           )}
@@ -65,15 +91,15 @@ const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
             type="submit"
             className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg"
           >
-            Submit
+            Create Account
           </button>
           <p className="text-sm text-center mt-2">
-            New to SideQuest?{" "}
+            Already have an account?{" "}
             <button
-              onClick={handleSignupClick}
+              onClick={handleLoginClick}
               className="text-blue-600 hover:underline font-medium"
             >
-              Create an account
+              Log in
             </button>
           </p>
         </form>
@@ -82,4 +108,4 @@ const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
   );
 };
 
-export default LoginModal;
+export default SignupModal;
