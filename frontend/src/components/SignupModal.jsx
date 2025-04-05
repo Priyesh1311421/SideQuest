@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
-  const [email, setEmail] = useState(""); // Changed from 'username' to 'email'
+const SignupModal = ({ isOpen, onClose, openLoginModal }) => {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
 
@@ -10,25 +10,32 @@ const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
     e.preventDefault();
     setError("");
     
+    // Basic validation (password field should not be empty)
+    if (!password) {
+      setError("Password is required.");
+      return;
+    }
+
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
-        email, // Sending 'email' instead of 'username'
+      const response = await axios.post("http://localhost:5000/api/signup", {
+        email,
         password,
       });
       localStorage.setItem("userId", response.data.result._id);
       localStorage.setItem("token", response.data.token);
-      console.log("Login successful:");
-      onClose(); 
+      console.log("Signup successful:");
+      onClose(); // Close modal on success
+      // You can redirect to login or directly log the user in
     } catch (err) {
-      setError("Invalid credentials. Please try again.");
-      console.error("Login error:", err);
+      setError(err.response?.data?.message || "Signup failed. Please try again.");
+      console.error("Signup error:", err);
     }
   };
 
-  const handleSignupClick = (e) => {
+  const handleLoginClick = (e) => {
     e.preventDefault();
-    onClose(); // Close the login modal
-    openSignupModal(); // Open the signup modal
+    onClose(); // Close the signup modal
+    openLoginModal(); // Open the login modal
   };
 
   if (!isOpen) return null;
@@ -42,11 +49,11 @@ const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
         >
           &times;
         </button>
-        <h2 className="text-xl font-semibold mb-4 text-center">Login</h2>
+        <h2 className="text-xl font-semibold mb-4 text-center">Sign Up</h2>
         <form onSubmit={handleSubmit} className="flex flex-col space-y-4">
           <input
-            type="email" // Changed to 'email' type
-            placeholder="Email" // Updated placeholder to 'Email'
+            type="email"
+            placeholder="Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             className="border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -67,15 +74,15 @@ const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
             type="submit"
             className="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg"
           >
-            Submit
+            Create Account
           </button>
           <p className="text-sm text-center mt-2">
-            New to SideQuest?{" "}
+            Already have an account?{" "}
             <button
-              onClick={handleSignupClick}
+              onClick={handleLoginClick}
               className="text-blue-600 hover:underline font-medium"
             >
-              Create an account
+              Log in
             </button>
           </p>
         </form>
@@ -84,4 +91,4 @@ const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
   );
 };
 
-export default LoginModal;
+export default SignupModal;
