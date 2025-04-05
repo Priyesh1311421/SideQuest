@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
+import Layout from "../components/Layout";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
     Carousel,
@@ -8,7 +9,7 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel";
-import { ExternalLink, ChevronDown, ChevronUp, Layout } from "lucide-react";
+import { ExternalLink, ChevronDown, ChevronUp} from "lucide-react";
 
 const StoryPage = ({ storyData }) => {
     const [expandedFood, setExpandedFood] = useState(null);
@@ -22,8 +23,8 @@ const StoryPage = ({ storyData }) => {
     };
 
     return (
+            <Layout>
         <div className="container mx-auto px-4 py-8 max-w-6xl">
-            <Layout />
             {/* Header Section */}
             <div className="relative mb-12">
                 <div className="w-full h-64 md:h-96 rounded-lg overflow-hidden shadow-lg">
@@ -379,6 +380,7 @@ const StoryPage = ({ storyData }) => {
                 </CardContent>
             </Card>
         </div>
+            </Layout>
     );
 };
 

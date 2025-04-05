@@ -1,7 +1,7 @@
 // Example story data structure for Brazil - you would create similar objects for other countries
 export const brazilStoryData = {
     country: "Brazil",
-    headerImage: "/images/brazil/brazil-header.jpeg",
+    headerImage: "/images/brazil/brazil-header.jpg",
     greeting: {
         text: "Olá",
         description: "This is how we greet in Brazil",
@@ -120,7 +120,7 @@ export const brazilStoryData = {
 
 export const indiaStoryData = {
     country: "India",
-    headerImage: "/images/india-header.jpg",
+    headerImage: "/images/india/india-header.jpg",
     greeting: {
         text: "नमस्ते",
         description: "This is how we greet in India",
@@ -128,15 +128,15 @@ export const indiaStoryData = {
     },
     clothing: {
         carouselImages: [
-            "/images/sari.jpg",
-            "/images/sherwani.jpg",
-            "/images/lehenga.jpg",
+            "/images/india/sari.jpg",
+            "/images/india/sherwani.jpg",
+            "/images/india/lehenga.jpg",
         ],
     },
     languages: [
         {
             name: "Hindi",
-            calligraphyImage: "/images/hindi-calligraphy.jpg",
+            calligraphyImage: "/images/india/hindi-calligraphy.jpg",
             phrases: [
                 {
                     text: "धन्यवाद (Thank you)",
@@ -150,7 +150,7 @@ export const indiaStoryData = {
         },
         {
             name: "Tamil",
-            calligraphyImage: "/images/tamil-script.jpg",
+            calligraphyImage: "/images/india/tamil-script.png",
             phrases: [
                 {
                     text: "நன்றி (Thank you)",
@@ -166,20 +166,20 @@ export const indiaStoryData = {
     food: [
         {
             name: "Biryani",
-            image: "/images/biryani.jpg",
+            image: "/images/india/biryani.jpg",
             description: "Aromatic spiced rice dish with meat or vegetables.",
             videoLink: "https://www.youtube.com/watch?v=biryani-video",
         },
         {
             name: "Dosa",
-            image: "/images/dosa.jpg",
+            image: "/images/india/dosa.jpeg",
             description:
                 "Thin crispy fermented rice crepe, usually served with chutney and sambar.",
             videoLink: "https://www.youtube.com/watch?v=dosa-video",
         },
         {
             name: "Chole Bhature",
-            image: "/images/chole-bhature.jpg",
+            image: "/images/india/chole-bhature.jpg",
             description: "Spicy chickpeas served with fluffy deep-fried bread.",
             videoLink: "https://www.youtube.com/watch?v=cholebhature-video",
         },
@@ -187,14 +187,14 @@ export const indiaStoryData = {
     festivals: [
         {
             name: "Diwali",
-            image: "/images/diwali.jpg",
+            image: "/images/india/diwali.jpg",
             description:
                 "Festival of Lights symbolizing victory of light over darkness.",
             videoLink: "https://www.youtube.com/watch?v=diwali-festival",
         },
         {
             name: "Holi",
-            image: "/images/holi.jpg",
+            image: "/images/india/holi.jpg",
             description:
                 "Festival of Colors celebrating love and the arrival of spring.",
             videoLink: "https://www.youtube.com/watch?v=holi-festival",
@@ -203,13 +203,13 @@ export const indiaStoryData = {
     art: [
         {
             name: "Madhubani",
-            image: "/images/madhubani.jpg",
+            image: "/images/india/madhubani.jpg",
             description:
                 "Folk art from Bihar characterized by intricate patterns and vibrant colors.",
         },
         {
             name: "Rangoli",
-            image: "/images/rangoli.jpg",
+            image: "/images/india/rangoli.jpg",
             description:
                 "Colorful patterns made on the ground using colored powders.",
         },
@@ -238,7 +238,7 @@ export const indiaStoryData = {
 
 export const italyStoryData = {
     country: "Italy",
-    headerImage: "/images/italy-header.jpg",
+    headerImage: "/images/italy/italy-header.jpg",
     greeting: {
         text: "Ciao",
         description: "This is how we greet in Italy",
@@ -246,15 +246,15 @@ export const italyStoryData = {
     },
     clothing: {
         carouselImages: [
-            "/images/renaissance-dress.jpg",
-            "/images/italian-suit.jpg",
-            "/images/traditional-folk.jpg",
+            "/images/italy/renaissance-dress.jpeg",
+            "/images/italy/italian-suit.jpg",
+            "/images/italy/traditional-folk.jpg",
         ],
     },
     languages: [
         {
             name: "Italian",
-            calligraphyImage: "/images/italian-calligraphy.jpg",
+            calligraphyImage: "/images/italy/italian-calligraphy.jpeg",
             phrases: [
                 {
                     text: "Grazie (Thank you)",
@@ -270,20 +270,20 @@ export const italyStoryData = {
     food: [
         {
             name: "Pizza Margherita",
-            image: "/images/pizza.jpg",
+            image: "/images/italy/pizza.jpeg",
             description:
                 "Classic Italian pizza with tomatoes, mozzarella, and basil.",
             videoLink: "https://www.youtube.com/watch?v=pizza-video",
         },
         {
             name: "Pasta Carbonara",
-            image: "/images/carbonara.jpg",
+            image: "/images/italy/carbonara.jpeg",
             description: "Pasta with eggs, cheese, pancetta, and pepper.",
             videoLink: "https://www.youtube.com/watch?v=carbonara-video",
         },
         {
             name: "Tiramisu",
-            image: "/images/tiramisu.jpg",
+            image: "/images/italy/tiramisu.jpeg",
             description:
                 "Coffee-flavored Italian dessert with layers of mascarpone and cocoa.",
             videoLink: "https://www.youtube.com/watch?v=tiramisu-video",
@@ -292,14 +292,14 @@ export const italyStoryData = {
     festivals: [
         {
             name: "Carnevale di Venezia",
-            image: "/images/venice-carnival.jpg",
+            image: "/images/italy/venice-carnival.jpeg",
             description:
                 "Famous for elaborate masks and costumes, held before Lent.",
             videoLink: "https://www.youtube.com/watch?v=venice-carnival",
         },
         {
             name: "Ferragosto",
-            image: "/images/ferragosto.jpg",
+            image: "/images/italy/ferragosto.jpeg",
             description:
                 "National holiday celebrated in mid-August with feasts and festivals.",
             videoLink: "https://www.youtube.com/watch?v=ferragosto-festival",
@@ -307,14 +307,14 @@ export const italyStoryData = {
     ],
     art: [
         {
-            name: "Michelangelo’s David",
-            image: "/images/david.jpg",
+            name: "Michelangelo's David",
+            image: "/images/italy/david.jpeg",
             description:
                 "Renaissance sculpture known for its detail and expression.",
         },
         {
             name: "Venetian Glass Art",
-            image: "/images/venetian-glass.jpg",
+            image: "/images/italy/venetian-glass.jpeg",
             description:
                 "Intricate glasswork traditionally made on the island of Murano.",
         },
@@ -343,7 +343,7 @@ export const italyStoryData = {
 
 export const japanStoryData = {
     country: "Japan",
-    headerImage: "/images/japan/japan-header.jpeg",
+    headerImage: "/images/japan/japan-header.jpg",
     greeting: {
         text: "こんにちは",
         description: "This is how we greet in Japan",

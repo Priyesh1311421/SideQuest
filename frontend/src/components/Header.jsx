@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { Link } from "react-router-dom";
 
 import LoginModal from "./LoginModal";
@@ -20,11 +20,34 @@ const Header = (props) => {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
     const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
+    
+    // Create a ref for detecting clicks outside the dropdown
+    const dropdownRef = useRef(null);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
         setIsAuthenticated(!!token);
     }, []);
+
+    // Handle clicks outside the dropdown to close it
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsDesktopStoriesOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
+    // Handle item selection to close dropdown
+    const handleStoryItemClick = () => {
+        setIsDesktopStoriesOpen(false);
+        setIsStoriesOpen(false);
+    };
 
     const openLoginModal = () => {
         setIsLoginModalOpen(true);
@@ -180,6 +203,7 @@ const Header = (props) => {
                                         <li>
                                             <Link
                                                 to="/stories/brazil"
+                                                onClick={handleStoryItemClick}
                                                 className={`block py-1 px-3 text-sm ${
                                                     isActive("/stories/brazil")
                                                         ? "text-blue-500 font-medium"
@@ -192,6 +216,7 @@ const Header = (props) => {
                                         <li>
                                             <Link
                                                 to="/stories/india"
+                                                onClick={handleStoryItemClick}
                                                 className={`block py-1 px-3 text-sm ${
                                                     isActive("/stories/india")
                                                         ? "text-blue-500 font-medium"
@@ -204,6 +229,7 @@ const Header = (props) => {
                                         <li>
                                             <Link
                                                 to="/stories/italy"
+                                                onClick={handleStoryItemClick}
                                                 className={`block py-1 px-3 text-sm ${
                                                     isActive("/stories/italy")
                                                         ? "text-blue-500 font-medium"
@@ -216,6 +242,7 @@ const Header = (props) => {
                                         <li>
                                             <Link
                                                 to="/stories/japan"
+                                                onClick={handleStoryItemClick}
                                                 className={`block py-1 px-3 text-sm ${
                                                     isActive("/stories/japan")
                                                         ? "text-blue-500 font-medium"
@@ -270,14 +297,14 @@ const Header = (props) => {
                                 </Link>
                             </li>
 
-                            {/* Dropdown starts here */}
-                            <li className="relative">
+                            {/* Dropdown with hover functionality */}
+                            <li 
+                                className="relative" 
+                                ref={dropdownRef}
+                                onMouseEnter={() => setIsDesktopStoriesOpen(true)}
+                                onMouseLeave={() => setIsDesktopStoriesOpen(false)}
+                            >
                                 <button
-                                    onClick={() =>
-                                        setIsDesktopStoriesOpen(
-                                            !isDesktopStoriesOpen
-                                        )
-                                    }
                                     className={`block py-2 px-3 ${
                                         isActive("/stories")
                                             ? "text-blue-500 font-medium"
@@ -310,6 +337,7 @@ const Header = (props) => {
                                     <li>
                                         <Link
                                             to="/stories/brazil"
+                                            onClick={handleStoryItemClick}
                                             className={`block px-4 py-2 text-sm ${
                                                 isActive("/stories/brazil")
                                                     ? "text-blue-500 font-medium bg-blue-50"
@@ -322,6 +350,7 @@ const Header = (props) => {
                                     <li>
                                         <Link
                                             to="/stories/india"
+                                            onClick={handleStoryItemClick}
                                             className={`block px-4 py-2 text-sm ${
                                                 isActive("/stories/india")
                                                     ? "text-blue-500 font-medium bg-blue-50"
@@ -334,6 +363,7 @@ const Header = (props) => {
                                     <li>
                                         <Link
                                             to="/stories/italy"
+                                            onClick={handleStoryItemClick}
                                             className={`block px-4 py-2 text-sm ${
                                                 isActive("/stories/italy")
                                                     ? "text-blue-500 font-medium bg-blue-50"
@@ -346,6 +376,7 @@ const Header = (props) => {
                                     <li>
                                         <Link
                                             to="/stories/japan"
+                                            onClick={handleStoryItemClick}
                                             className={`block px-4 py-2 text-sm ${
                                                 isActive("/stories/japan")
                                                     ? "text-blue-500 font-medium bg-blue-50"
@@ -357,7 +388,6 @@ const Header = (props) => {
                                     </li>
                                 </ul>
                             </li>
-                            {/* Dropdown ends here */}
                         </ul>
                     </div>
                 </div>
