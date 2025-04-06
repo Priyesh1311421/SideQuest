@@ -6,7 +6,7 @@ const features = [
     title: "Text Chat Rooms",
     description:
       "Join public chat rooms based on countries or cultural events. Messages are instantly translated, so you can chat, learn, and connect — no language barrier!",
-    image: "/images/text-chat-preview.jpg",
+    image: "/images/landing/text-chat-preview.png",
     buttonText: "Enter Text Chat",
     link: "/text-chat",
   },
@@ -15,7 +15,7 @@ const features = [
     title: "Voice Chat (with Translation)",
     description:
       "Speak directly with people from around the world. Voice chat includes live translation, making conversation natural, immersive, and barrier-free.",
-    image: "/images/voice-chat-preview.jpg",
+    image: "/images/landing/voice-chat-preview.png",
     buttonText: "Start Talking",
     link: "/voice-chat",
   },
@@ -24,7 +24,7 @@ const features = [
     title: "Cultural Stories",
     description:
       "Walk through immersive, animated stories filled with music, food, art, and festivals. A new way to experience the heart of each culture.",
-    image: "/images/cultural-stories-preview.jpg",
+    image: "/images/landing/cultural-stories-preview.png",
     buttonText: "Explore Stories",
     link: "/stories/brazil",
   },

@@ -209,18 +209,7 @@ const LandingPage = () => {
           </div>
           
           <div className="max-w-5xl mx-auto px-6 relative z-10">
-            <div className="flex flex-col md:flex-row items-center md:space-x-10">
-              <div className="md:w-1/2 mb-10 md:mb-0">
-                <div className="relative">
-                  <div className="absolute inset-0 bg-indigo-200 rounded-lg transform rotate-3"></div>
-                  <img 
-                    src="/api/placeholder/600/400" 
-                    alt="People connecting across cultures" 
-                    className="relative z-10 rounded-lg shadow-lg"
-                  />
-                </div>
-              </div>
-              
+            <div className="flex flex-col items-center md:space-x-10">
               <div className="md:w-1/2">
                 <div className="inline-block px-3 py-1 bg-indigo-100 text-indigo-700 rounded-full text-sm font-medium mb-4">
                   Our Mission
