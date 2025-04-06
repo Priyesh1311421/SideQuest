@@ -291,7 +291,7 @@ const Header = (props) => {
                                             : "text-zinc-700 hover:text-blue-500"
                                     }`}
                                 >
-                                    Voice Chat
+                                    Video Chat
                                 </Link>
                             </li>
                             <li>

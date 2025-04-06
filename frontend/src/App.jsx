@@ -14,7 +14,7 @@ import ChatRoomPage from "./pages/ChatRoomPage.jsx";
 import { Socket } from "socket.io-client";
 import { SocketProvider } from "./provider/Socket.jsx";
 import { PeerProvider } from "./provider/Peer.jsx";
-import RoomPage from "./components/videoChat/RoomPage.jsx";
+import RoomPage from "./components/RoomPage.jsx";
 
 function App() {
     return (

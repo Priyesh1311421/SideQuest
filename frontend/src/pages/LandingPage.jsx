@@ -227,7 +227,7 @@ const LandingPage = () => {
                         href="/voice-chat"
                         className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium shadow-md hover:bg-indigo-700 transition-colors"
                       >
-                        Try Voice Chat
+                        Try Video Chat
                       </a>
                     )}
                   </div>

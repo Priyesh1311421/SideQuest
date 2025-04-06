@@ -12,11 +12,11 @@ const features = [
   },
   {
     id: "voice-chat",
-    title: "Voice Chat (with Translation)",
+    title: "Video Chat (with Translation)",
     description:
-      "Speak directly with people from around the world. Voice chat includes live translation, making conversation natural, immersive, and barrier-free.",
+      "Speak directly with people from around the world. Video chat includes live translation, making conversation natural, immersive, and barrier-free.",
     image: "/images/landing/voice-chat-preview.png",
-    buttonText: "Start Talking",
+    buttonText: "Start Interacting",
     link: "/voice-chat",
   },
   {
