@@ -136,19 +136,11 @@ const LandingPage = () => {
                 <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-white rounded-full group-hover:w-56 group-hover:h-56 opacity-10"></span>
                 Start Chatting
               </a>
+
+              
             )}
-            
-            {/* Secondary action button */}
-            <div className="mt-6">
-              <button onClick={() => document.getElementById('about').scrollIntoView({behavior: 'smooth'})} 
-                      className="text-indigo-600 hover:text-indigo-800 font-medium flex items-center justify-center">
-                Learn more
-                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
-                </svg>
-              </button>
             </div>
-          </div>
+            
           
           {/* Subtle Down Arrow with enhanced animation */}
           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
