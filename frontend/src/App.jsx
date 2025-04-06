@@ -19,32 +19,35 @@ import RoomPage from "./components/videoChat/RoomPage.jsx";
 function App() {
     return (
         <SocketProvider>
-        <PeerProvider>
-        <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/voice-chat/:" element={<VoiceChatPage />} />
-            <Route path="/text-chat" element={<TextChatPage />} />
-            <Route path="/chat-room/:roomId" element={<ChatRoomPage />} />
-            <Route path="/room/:roomId" element={<RoomPage />} />
+            <PeerProvider>
+                <Routes>
+                    <Route path="/" element={<LandingPage />} />
+                    <Route path="/voice-chat/" element={<VoiceChatPage />} />
+                    <Route path="/text-chat" element={<TextChatPage />} />
+                    <Route
+                        path="/chat-room/:roomId"
+                        element={<ChatRoomPage />}
+                    />
+                    <Route path="/room/:roomId" element={<RoomPage />} />
 
-            <Route
-                path="/stories/brazil"
-                element={<StoryPage storyData={brazilStoryData} />}
-            />
-            <Route
-                path="/stories/india"
-                element={<StoryPage storyData={indiaStoryData} />}
-            />
-            <Route
-                path="/stories/italy"
-                element={<StoryPage storyData={italyStoryData} />}
-            />
-            <Route
-                path="/stories/japan"
-                element={<StoryPage storyData={japanStoryData} />}
-            />
-        </Routes>
-        </PeerProvider>
+                    <Route
+                        path="/stories/brazil"
+                        element={<StoryPage storyData={brazilStoryData} />}
+                    />
+                    <Route
+                        path="/stories/india"
+                        element={<StoryPage storyData={indiaStoryData} />}
+                    />
+                    <Route
+                        path="/stories/italy"
+                        element={<StoryPage storyData={italyStoryData} />}
+                    />
+                    <Route
+                        path="/stories/japan"
+                        element={<StoryPage storyData={japanStoryData} />}
+                    />
+                </Routes>
+            </PeerProvider>
         </SocketProvider>
     );
 }

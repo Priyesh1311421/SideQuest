@@ -50,20 +50,20 @@ export const brazilStoryData = {
             image: "/images/brazil/feijoada.jpg",
             description:
                 "A hearty black bean stew with pork, traditionally served with rice.",
-            videoLink: "https://www.youtube.com/watch?v=feijoada-recipe",
+            videoLink: "https://www.youtube.com/watch?v=0wOyK8JYyZ8&ab_channel=HomeChefSeattle",
         },
         {
             name: "Pão de Queijo",
             image: "/images/brazil/pao-de-queijo.jpeg",
             description: "Chewy cheese bread balls, a popular snack in Brazil.",
-            videoLink: "https://www.youtube.com/watch?v=pao-de-queijo-recipe",
+            videoLink: "https://www.youtube.com/watch?v=IOb5uric4n0&ab_channel=TheCookingFoodie",
         },
         {
             name: "Moqueca",
             image: "/images/brazil/moqueca.jpeg",
             description:
                 "A flavorful fish stew cooked with coconut milk, tomatoes, and spices.",
-            videoLink: "https://www.youtube.com/watch?v=moqueca-recipe",
+            videoLink: "https://www.youtube.com/watch?v=p7UHO_RJ0jM&ab_channel=America%27sTestKitchen",
         },
     ],
     festivals: [
@@ -72,14 +72,14 @@ export const brazilStoryData = {
             image: "/images/brazil/carnival.jpg",
             description:
                 "Brazil's most famous festival featuring samba parades and vibrant costumes.",
-            videoLink: "https://www.youtube.com/watch?v=carnival-parade",
+            videoLink: "https://www.youtube.com/watch?v=Uf0zWr0r8us&ab_channel=Firstpost",
         },
         {
             name: "Festa Junina",
             image: "/images/brazil/festa-junina.jpeg",
             description:
                 "A traditional festival celebrating rural life with dances, music, and food.",
-            videoLink: "https://www.youtube.com/watch?v=festa-junina",
+            videoLink: "https://www.youtube.com/watch?v=9A29VpXJ2Gs&ab_channel=TheBrazilianReport",
         },
     ],
     art: [
@@ -99,11 +99,11 @@ export const brazilStoryData = {
     music: [
         {
             title: "Samba Performance",
-            videoLink: "https://www.youtube.com/watch?v=samba-performance",
+            videoLink: "https://www.youtube.com/watch?v=KSScp7AONwI&ab_channel=DanceTime.com",
         },
         {
             title: "Bossa Nova Classics",
-            videoLink: "https://www.youtube.com/watch?v=bossa-nova",
+            videoLink: "https://www.youtube.com/watch?v=7ovLcQ5Ev6E&ab_channel=RhythmandHymns",
         },
     ],
     touristAttractions: [
@@ -170,36 +170,37 @@ export const indiaStoryData = {
             name: "Biryani",
             image: "/images/india/biryani.jpg",
             description: "Aromatic spiced rice dish with meat or vegetables.",
-            videoLink: "https://www.youtube.com/watch?v=biryani-video",
+            videoLink: "https://www.youtube.com/watch?v=95BCU1n268w&ab_channel=SpiceEats", // Updated active video link for Biryani
         },
         {
             name: "Dosa",
             image: "/images/india/dosa.jpeg",
             description:
                 "Thin crispy fermented rice crepe, usually served with chutney and sambar.",
-            videoLink: "https://www.youtube.com/watch?v=dosa-video",
+            videoLink: "https://www.youtube.com/watch?v=1dCguTWLiJ4&ab_channel=YourFoodLab", // Updated active video link for Dosa
         },
         {
             name: "Chole Bhature",
             image: "/images/india/chole-bhature.jpg",
             description: "Spicy chickpeas served with fluffy deep-fried bread.",
-            videoLink: "https://www.youtube.com/watch?v=cholebhature-video",
+            videoLink: "https://www.youtube.com/watch?v=QbyXsYOTJD4&ab_channel=HebbarsKitchen", // Updated active video link for Chole Bhature
         },
     ],
+    
     festivals: [
         {
             name: "Diwali",
             image: "/images/india/diwali.jpg",
             description:
                 "Festival of Lights symbolizing victory of light over darkness.",
-            videoLink: "https://www.youtube.com/watch?v=diwali-festival",
+            videoLink: "https://www.youtube.com/watch?v=HrrW3rO51ak&ab_channel=NationalGeographic",
         },
         {
             name: "Holi",
             image: "/images/india/holi.jpg",
             description:
                 "Festival of Colors celebrating love and the arrival of spring.",
-            videoLink: "https://www.youtube.com/watch?v=holi-festival",
+            videoLink: "https://www.youtube.com/watch?v=FZ9ed-zDazk&ab_channel=ReligionForBreakfast",
         },
     ],
     art: [
@@ -219,25 +220,25 @@ export const indiaStoryData = {
     music: [
         {
             title: "Sitar Performance",
-            videoLink: "https://www.youtube.com/watch?v=sitar-performance",
+            videoLink: "https://www.youtube.com/watch?v=o6HzjWiCLNc&ab_channel=TheBritishMuseum",
         },
         {
             title: "Tabla Solo",
-            videoLink: "https://www.youtube.com/watch?v=tabla-solo",
+            videoLink: "https://www.youtube.com/watch?v=LAwgD_YxRgM&ab_channel=BerkleeCollegeofMusic",
         },
     ],
     touristAttractions: [
         {
             name: "Taj Mahal",
             360: "https://www.airpano.com/embed.php?3D=taj-mahal-india-2",
-            videoLink: "https://www.youtube.com/watch?v=61FT01wsIwI",
+            videoLink: "https://www.youtube.com/watch?v=V0zM9Y-D3yY"
         },
         {
             name: "Jaipur - The Pink City",
             360: "https://www.airpano.com/embed.php?3D=jaipur-india",
-            videoLink: "https://www.youtube.com/watch?v=skJVCmI4LM4",
-        },
-    ],
+            videoLink: "https://www.youtube.com/watch?v=Jr8vD4eFz6Y"
+        }
+    ]
 };
 
 export const italyStoryData = {
@@ -277,20 +278,20 @@ export const italyStoryData = {
             image: "/images/italy/pizza.jpeg",
             description:
                 "Classic Italian pizza with tomatoes, mozzarella, and basil.",
-            videoLink: "https://www.youtube.com/watch?v=pizza-video",
+            videoLink: "https://www.youtube.com/watch?v=xKDnD8sJsuY&ab_channel=Vincenzo%27sPlate",
         },
         {
             name: "Pasta Carbonara",
             image: "/images/italy/carbonara.jpeg",
             description: "Pasta with eggs, cheese, pancetta, and pepper.",
-            videoLink: "https://www.youtube.com/watch?v=carbonara-video",
+            videoLink: "https://www.youtube.com/watch?v=D_2DBLAt57c&ab_channel=JamieOliver",
         },
         {
             name: "Tiramisu",
             image: "/images/italy/tiramisu.jpeg",
             description:
                 "Coffee-flavored Italian dessert with layers of mascarpone and cocoa.",
-            videoLink: "https://www.youtube.com/watch?v=tiramisu-video",
+            videoLink: "https://www.youtube.com/watch?v=1dCguTWLiJ4&ab_channel=YourFoodLab",
         },
     ],
     festivals: [
@@ -299,14 +300,14 @@ export const italyStoryData = {
             image: "/images/italy/venice-carnival.jpeg",
             description:
                 "Famous for elaborate masks and costumes, held before Lent.",
-            videoLink: "https://www.youtube.com/watch?v=venice-carnival",
+            videoLink: "https://www.youtube.com/watch?v=p4LfiFdMEV8&ab_channel=zvolda",
         },
         {
             name: "Ferragosto",
             image: "/images/italy/ferragosto.jpeg",
             description:
                 "National holiday celebrated in mid-August with feasts and festivals.",
-            videoLink: "https://www.youtube.com/watch?v=ferragosto-festival",
+            videoLink: "https://www.youtube.com/watch?v=BZksoLfl_S4&ab_channel=GiseliRodas",
         },
     ],
     art: [
@@ -326,11 +327,11 @@ export const italyStoryData = {
     music: [
         {
             title: "Opera Performance",
-            videoLink: "https://www.youtube.com/watch?v=opera-performance",
+            videoLink: "https://www.youtube.com/watch?v=WAZR4ru8D6Y&ab_channel=LaSierraUniversityMusic",
         },
         {
             title: "Classical Violin Solo",
-            videoLink: "https://www.youtube.com/watch?v=violin-solo",
+            videoLink: "https://www.youtube.com/watch?v=iEBX_ouEw1I&ab_channel=HilaryHahnVEVO",
         },
     ],
     touristAttractions: [
@@ -397,19 +398,19 @@ export const japanStoryData = {
             name: "Sushi",
             image: "/images/japan/sushi.jpg",
             description: "Vinegared rice topped with raw fish or seafood.",
-            videoLink: "https://www.youtube.com/watch?v=sushi-video",
+            videoLink: "https://www.youtube.com/watch?v=EGeNKGosXA8&ab_channel=Munchies",
         },
         {
             name: "Ramen",
             image: "/images/japan/ramen.jpeg",
             description: "Noodle soup with rich broth and various toppings.",
-            videoLink: "https://www.youtube.com/watch?v=ramen-video",
+            videoLink: "https://www.youtube.com/watch?v=EizSoy7Ztto&ab_channel=JapaneseCooking101",
         },
         {
             name: "Okonomiyaki",
             image: "/images/japan/okonomiyaki.jpeg",
             description: "A savory pancake with meats, vegetables, and sauces.",
-            videoLink: "https://www.youtube.com/watch?v=okonomiyaki-video",
+            videoLink: "https://www.youtube.com/watch?v=zy1nkcNpAOI&ab_channel=Champ%27sJapaneseKitchen",
         },
     ],
     festivals: [
@@ -418,14 +419,14 @@ export const japanStoryData = {
             image: "/images/japan/gion-matsuri.jpg",
             description:
                 "Kyoto's most famous festival with floats and traditional dress.",
-            videoLink: "https://www.youtube.com/watch?v=gion-festival",
+            videoLink: "https://www.youtube.com/watch?v=16GWw0JJ1O0&ab_channel=HarpistinJapan",
         },
         {
             name: "Tanabata",
             image: "/images/japan/tanabata.jpeg",
             description:
                 "Star festival celebrating the meeting of two deities.",
-            videoLink: "https://www.youtube.com/watch?v=tanabata-festival",
+            videoLink: "https://www.youtube.com/watch?v=rOahFPV-xxQ&ab_channel=GTVJapan",
         },
     ],
     art: [
@@ -444,11 +445,11 @@ export const japanStoryData = {
     music: [
         {
             title: "Koto Performance",
-            videoLink: "https://www.youtube.com/watch?v=koto-performance",
+            videoLink: "https://www.youtube.com/watch?v=VFK8_9RcaOc&ab_channel=JapanHouseLondon",
         },
         {
             title: "Taiko Drumming",
-            videoLink: "https://www.youtube.com/watch?v=taiko-drums",
+            videoLink: "https://www.youtube.com/watch?v=WY5AXv89V1s&ab_channel=TaikoTaikai",
         },
     ],
     touristAttractions: [
