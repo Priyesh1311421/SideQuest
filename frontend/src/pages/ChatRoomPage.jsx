@@ -63,7 +63,7 @@ const ChatRoomPage = () => {
     const fetchMessages = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/message/${roomId}?limit=100`,
+          `http://3.109.158.27:5000/api/message/${roomId}?limit=100`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -96,7 +96,7 @@ const ChatRoomPage = () => {
 
   // WebSocket connection
   useEffect(() => {
-    ws.current = new WebSocket(`ws://localhost:8080?userId=${userId}`);
+    ws.current = new WebSocket(`ws://3.109.158.27:8080?userId=${userId}`);
 
     ws.current.onopen = () => {
       console.log("Connected to WebSocket");

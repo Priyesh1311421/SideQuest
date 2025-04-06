@@ -47,7 +47,7 @@ const TextChatPage = () => {
     const fetchRooms = async () => {
       setIsLoading(true);
       try {
-        const response = await axios.get("http://localhost:5000/api/rooms", {
+        const response = await axios.get("http://3.109.158.27:5000/api/rooms", {
           headers: {
             Authorization: `Bearer ${token}`,
           },

@@ -10,7 +10,7 @@ export const useSocket = ()=>{
 export const SocketProvider = (props)=>{
     const socket = useMemo(
         ()=> 
-            io('http://localhost:8001'),
+            io('http://3.109.158.27:8001'),
         []
     )
     return (

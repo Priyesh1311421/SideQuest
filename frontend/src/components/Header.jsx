@@ -1,7 +1,6 @@
 import { useEffect, useState, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
 
 import LoginModal from "./LoginModal";
 import SignupModal from "./SignupModal";
@@ -13,14 +12,12 @@ const Header = (props) => {
     const apiKey = import.meta.env.VITE_OPENAI_API_KEY;
     const navigate = useNavigate();
 
-
     const isActive = (path) => {
         if (path === "/") {
             return currentPath === path;
         }
         return currentPath.startsWith(path);
     };
-    
 
     const [isOpen, setIsOpen] = useState(false);
     const [isStoriesOpen, setIsStoriesOpen] = useState(false);
@@ -28,19 +25,32 @@ const Header = (props) => {
     const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
     const [isSignupModalOpen, setIsSignupModalOpen] = useState(false);
     const [isAuthenticated, setIsAuthenticated] = useState(false);
-    
+
     // Create a ref for detecting clicks outside the dropdown
     const dropdownRef = useRef(null);
 
+    const location = useLocation();
+
+    // Update your useEffect to check for login modal state:
     useEffect(() => {
         const token = localStorage.getItem("token");
         setIsAuthenticated(!!token);
-    }, []);
+
+        // Check if we were redirected with showLogin state
+        if (location.state?.showLogin) {
+            setIsLoginModalOpen(true);
+            // Clear the state to prevent modal reopening on refresh
+            window.history.replaceState({}, document.title);
+        }
+    }, [location]);
 
     // Handle clicks outside the dropdown to close it
     useEffect(() => {
         const handleClickOutside = (event) => {
-            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+            if (
+                dropdownRef.current &&
+                !dropdownRef.current.contains(event.target)
+            ) {
                 setIsDesktopStoriesOpen(false);
             }
         };
@@ -61,9 +71,13 @@ const Header = (props) => {
         setIsLoginModalOpen(true);
     };
 
+    // In the closeLoginModal function:
     const closeLoginModal = () => {
         setIsLoginModalOpen(false);
         setIsAuthenticated(true);
+
+        // Dispatch custom event to notify App component
+        window.dispatchEvent(new Event("authChange"));
     };
 
     const openSignupModal = () => {
@@ -78,8 +92,10 @@ const Header = (props) => {
         localStorage.removeItem("token");
         localStorage.removeItem("userId");
         setIsAuthenticated(false);
-        navigate("/");
 
+        window.dispatchEvent(new Event("authChange"));
+
+        navigate("/");
     };
 
     return (
@@ -308,11 +324,15 @@ const Header = (props) => {
                             </li>
 
                             {/* Dropdown with hover functionality */}
-                            <li 
-                                className="relative" 
+                            <li
+                                className="relative"
                                 ref={dropdownRef}
-                                onMouseEnter={() => setIsDesktopStoriesOpen(true)}
-                                onMouseLeave={() => setIsDesktopStoriesOpen(false)}
+                                onMouseEnter={() =>
+                                    setIsDesktopStoriesOpen(true)
+                                }
+                                onMouseLeave={() =>
+                                    setIsDesktopStoriesOpen(false)
+                                }
                             >
                                 <button
                                     className={`block py-2 px-3 ${
@@ -414,7 +434,7 @@ const Header = (props) => {
                 onClose={closeSignupModal}
                 openLoginModal={openLoginModal}
             />
-            <FloatingChatbot apiKey={apiKey}/>
+            <FloatingChatbot apiKey={apiKey} />
         </>
     );
 };

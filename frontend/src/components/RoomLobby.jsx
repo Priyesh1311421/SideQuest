@@ -32,7 +32,7 @@ function RoomLobby() {
         setError(null);
         try {
             const response = await axios.get(
-                "http://localhost:5000/api/rooms",
+                "http://3.109.158.27:5000/api/rooms",
                 {
                     headers: {
                         Authorization: `Bearer ${token}`,

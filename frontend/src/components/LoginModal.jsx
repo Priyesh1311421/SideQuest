@@ -11,7 +11,7 @@ const LoginModal = ({ isOpen, onClose, openSignupModal }) => {
     setError("");
     
     try {
-      const response = await axios.post("http://localhost:5000/api/login", {
+      const response = await axios.post("http://3.109.158.27:5000/api/login", {
         email, // Sending 'email' instead of 'username'
         password,
       });
